@@ -2,7 +2,7 @@
 
 # **Get started**
 
-**Release version:  1.0.6 | Release date: 11.12.2022**
+**Release version:  1.0.6 | Release date: 16.12.2022**
 
 Follow this guide to get started with Ap Mobile SDK.
 
@@ -46,7 +46,7 @@ To prepare your app, complete the steps in the following sections.
         repositories {
             google()
             mavenCentral()
-    		maven { url 'https://jitpack.io' }
+            maven { url 'https://jitpack.io' }
         }
     }
     
@@ -54,7 +54,7 @@ To prepare your app, complete the steps in the following sections.
         repositories {
             google()
             mavenCentral()
-    		maven { url 'https://jitpack.io' }
+            maven { url 'https://jitpack.io' }
         }
     }
     ```
@@ -73,7 +73,7 @@ To prepare your app, complete the steps in the following sections.
     ```xml
     <manifest>
         <application>
-           	<!-- Ad Manager app ID will be provided by AdPushup -->
+            <!-- Ad Manager app ID will be provided by AdPushup -->
             <meta-data
                 android:name="com.google.android.gms.ads.APPLICATION_ID"
                 android:value="ca-app-pub-xxxxxxxxxxxxxxxx~yyyyyyyyyy"/>
@@ -117,7 +117,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 				
-		// apAppId is your app ID in AdPushUp. It will be provided to you by AdPushup.
+	// apAppId is your app ID in AdPushUp. It will be provided to you by AdPushup.
         ApMobileSdk.init(this, "apAppId")
     }
 }
