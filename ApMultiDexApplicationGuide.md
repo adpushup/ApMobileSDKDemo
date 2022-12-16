@@ -6,9 +6,9 @@ This also adds support for Multidex in your app without the need to extend your 
 
 To do that you can follow the simple steps,
 
-Depending on whether you override the `[Application](https://developer.android.com/reference/android/app/Application)` class, perform one of the following:
+Depending on whether you override the [Application](https://developer.android.com/reference/android/app/Application) class, perform one of the following:
 
-- If you *do not* override the `[Application](https://developer.android.com/reference/android/app/Application)` class OR If you override the `[Application](https://developer.android.com/reference/android/app/Application)` class just for enabling **multidex**, edit your manifest file to set `android:name` in the `<application>` tag as follows:
+- If you *do not* override the [Application](https://developer.android.com/reference/android/app/Application) class OR If you override the [Application](https://developer.android.com/reference/android/app/Application) class just for enabling **multidex**, edit your manifest file to set `android:name` in the `<application>` tag as follows:
     
     ```xml
     <manifest>
@@ -19,7 +19,7 @@ Depending on whether you override the `[Application](https://developer.android.
     </manifest>
     ```
     
-- If you do override the `[Application](https://developer.android.com/reference/android/app/Application)` class, change it to extend `ApMultiDexApplication` (if possible) as follows:
+- If you do override the [Application](https://developer.android.com/reference/android/app/Application) class, change it to extend `ApMultiDexApplication` (if possible) as follows:
     
     > Don’t forget to add the Multidex dependency in your `build.gradle` file.
     > 
@@ -36,7 +36,7 @@ Depending on whether you override the `[Application](https://developer.android.
     public class MyApplication extends ApMultiDexApplication { }
     ```
     
-- Or if you do override the `[Application](https://developer.android.com/reference/android/app/Application)` class but it's not possible to change the base class, then you can instead override the `[attachBaseContext()](https://developer.android.com/reference/android/content/ContextWrapper#attachBaseContext(android.content.Context))` method and call `ApMobileSdk.initACRA(**this**)` to configure Ap Mobile SDK:
+- Or if you do override the [Application](https://developer.android.com/reference/android/app/Application) class but it's not possible to change the base class, then you can instead override the [attachBaseContext()](https://developer.android.com/reference/android/content/ContextWrapper#attachBaseContext(android.content.Context)) method and call `ApMobileSdk.initACRA(this)` to configure Ap Mobile SDK:
     
     > Don’t forget to add the Multidex dependency in your `build.gradle` file.
     > 
@@ -49,7 +49,7 @@ Depending on whether you override the `[Application](https://developer.android.
         override fun attachBaseContext(base: Context) {
             super.attachBaseContext(base)
     
-    		// Configure Ap Mobile SDK
+            // Configure Ap Mobile SDK
             ApMobileSdk.initACRA(this)
         }
     }
@@ -63,7 +63,7 @@ Depending on whether you override the `[Application](https://developer.android.
         protected void attachBaseContext(@NonNull Context base) {
             super.attachBaseContext(base);
     
-    		// Configure Ap Mobile SDK
+            // Configure Ap Mobile SDK
             ApMobileSdk.initACRA(this);
         }
     }
