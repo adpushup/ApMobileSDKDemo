@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">RewardedAdExample</string>
+    <string name="gam_app_id">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="ap_app_id">testexample</string>
+    <string name="ad_placement_id">testRewardedPlacementId</string>
+    <string name="show_ad">Show Ad</string>
+</resources>
