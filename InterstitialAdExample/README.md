@@ -19,7 +19,7 @@ Call `ApMobileSdk.showInterstitialAd()`
 
 ```kotlin
 ApMobileSdk.showInterstitialAd(this@MainActivity, "AP_PLACEMENT_ID") {
-		// Do your work after the interstitial ad is closed.
+	// Do your work after the interstitial ad is closed.
 }
 ```
 
@@ -27,7 +27,7 @@ ApMobileSdk.showInterstitialAd(this@MainActivity, "AP_PLACEMENT_ID") {
 
 ```java
 ApMobileSdk.showInterstitialAd(MainActivity.this, "AP_PLACEMENT_ID", () -> {
-		// Do your work after the interstitial ad is closed.
+	// Do your work after the interstitial ad is closed.
 });
 ```
 
@@ -35,28 +35,28 @@ ApMobileSdk.showInterstitialAd(MainActivity.this, "AP_PLACEMENT_ID", () -> {
 
 ```kotlin
 ApInterstitialListener {
-		// Called when the ad is clicked.
-		override fun onAdClicked() {}
+	// Called when the ad is clicked.
+	override fun onAdClicked() {}
 
-		// Called on the ad impression.
-		override fun onAdImpression() {}
+	// Called on the ad impression.
+	override fun onAdImpression() {}
 
-		// Called when the ad is shown.
-		override fun onAdShowedFullScreenContent() {}
+	// Called when the ad is shown.
+	override fun onAdShowedFullScreenContent() {}
 
-		// Called when the ad is dismissed.
-		override fun onAdDismissedFullScreenContent() {}
+	// Called when the ad is dismissed.
+	override fun onAdDismissedFullScreenContent() {}
 
-		// Called when the ad is not ready.
-		override fun onAdNotLoadedYet() {}
+	// Called when the ad is not ready.
+	override fun onAdNotLoadedYet() {}
 
-		// Best place to resume your work.
-		override fun onComplete() {}
+	// Best place to resume your work.
+	override fun onComplete() {}
 
-		// Called when the ad is unable to display due to an error.
-		override fun onError(code: Int, message: String?) {}
+	// Called when the ad is unable to display due to an error.
+	override fun onError(code: Int, message: String?) {}
 
-		// Called when the ad is displayed but with some warnings.
-		override fun onWarning(code: Int, message: String?) {}
+	// Called when the ad is displayed but with some warnings.
+	override fun onWarning(code: Int, message: String?) {}
 }
 ```

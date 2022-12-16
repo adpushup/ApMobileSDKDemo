@@ -33,7 +33,7 @@ To implement Native Ads in your app, follow these steps:
     
     ```kotlin
     apNative.loadAd(context) {
-    		mNativeAd = it
+        mNativeAd = it
         // It's best practice to always destroy the ad if the activity itself is destroyed.
         if(this@MainActivity.isDestroyed()) mNativeAd.destroy()
     }
@@ -89,9 +89,9 @@ To implement Native Ads in your app, follow these steps:
     
     ```kotlin
     apNative.loadAd(context) {
-    		// Assumes that your ad layout is in a file call native_ad_layout.xml in the res/layout folder
+        // Assumes that your ad layout is in a file call native_ad_layout.xml in the res/layout folder
         val adView = layoutInflater.inflate(R.layout.native_ad_layout, null) as NativeAdView
-    	  // This method sets the text, images and the native ad, etc into the ad view.
+        // This method sets the text, images and the native ad, etc into the ad view.
         populateNativeAdView(it, adView)
         // Assumes you have a placeholder FrameLayout in your View layout (with id ad_frame) where the ad is to be placed.
         ad_frame.removeAllViews()
@@ -103,7 +103,7 @@ To implement Native Ads in your app, follow these steps:
     
     ```java
     apNative.loadAd(context, it -> 
-    		// Assumes that your ad layout is in a file call native_ad_layout.xml in the res/layout folder
+        // Assumes that your ad layout is in a file call native_ad_layout.xml in the res/layout folder
         NativeAdView adView = (NativeAdView) getLayoutInflater().inflate(R.layout.native_ad_layout, null);
         // This method sets the text, images and the native ad, etc into the ad view.
         populateNativeAdView(it, adView);
@@ -117,28 +117,28 @@ To implement Native Ads in your app, follow these steps:
     
     ```kotlin
     ApNativeListener {
-    		// Called when the native ad is available.
-    		override fun onNativeAd(nativeAd: NativeAd?) {}
+    	// Called when the native ad is available.
+    	override fun onNativeAd(nativeAd: NativeAd?) {}
     
-    		// Called when the ad is closed.
-    		override fun onAdClosed() {}
+    	// Called when the ad is closed.
+    	override fun onAdClosed() {}
     
-    		// Called when the ad is opened.
-    		override fun onAdOpened() {}
+    	// Called when the ad is opened.
+    	override fun onAdOpened() {}
     
-    		// Called when the ad is loaded.
-    		override fun onAdLoaded() {}
+    	// Called when the ad is loaded.
+    	override fun onAdLoaded() {}
     
-    		// Called when the ad is clicked.
-    		override fun onAdClicked() {}
+    	// Called when the ad is clicked.
+    	override fun onAdClicked() {}
     
-    		// Called on ad impression.
-    		override fun onAdImpression() {}
+    	// Called on ad impression.
+    	override fun onAdImpression() {}
     
-    		// Called when the ad is unable to display due to an error.
-    		override fun onError(code: Int, message: String?) {}
+    	// Called when the ad is unable to display due to an error.
+    	override fun onError(code: Int, message: String?) {}
     
-    		// Called when the ad is displayed but with some warnings.
-    		override fun onWarning(code: Int, message: String?) {}
+    	// Called when the ad is displayed but with some warnings.
+    	override fun onWarning(code: Int, message: String?) {}
     }
     ```

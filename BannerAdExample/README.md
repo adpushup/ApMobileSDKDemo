@@ -85,25 +85,25 @@ To implement Banner Ads in your app, follow these steps:
 
 ```kotlin
 ApBannerListener {
-		// Called when the ad is closed.
-		override fun onAdClosed() {}
+	// Called when the ad is closed.
+	override fun onAdClosed() {}
 
-		// Called when the ad is opened.
-		override fun onAdOpened() {}
+	// Called when the ad is opened.
+	override fun onAdOpened() {}
 
-		// Called when the ad is loaded.
-		override fun onAdLoaded() {}
+	// Called when the ad is loaded.
+	override fun onAdLoaded() {}
 
-		// Called when the ad is clicked.
-		override fun onAdClicked() {}
+	// Called when the ad is clicked.
+	override fun onAdClicked() {}
 
-		// Called on ad impression.
-		override fun onAdImpression() {}
+	// Called on ad impression.
+	override fun onAdImpression() {}
 
-		// Called when the ad is unable to display due to an error.
-		override fun onError(code: Int, message: String?) {}
+	// Called when the ad is unable to display due to an error.
+	override fun onError(code: Int, message: String?) {}
 
-		// Called when the ad is displayed but with some warnings.
-		override fun onWarning(code: Int, message: String?) {}
+	// Called when the ad is displayed but with some warnings.
+	override fun onWarning(code: Int, message: String?) {}
 }
 ```

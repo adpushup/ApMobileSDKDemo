@@ -13,7 +13,7 @@ Depending on whether you override the `[Application](https://developer.android.
     ```xml
     <manifest>
         <application
-                android:name="com.adpushup.apmobilesdk.ApMultiDexApplication" >
+            android:name="com.adpushup.apmobilesdk.ApMultiDexApplication" >
             ...
         </application>
     </manifest>
@@ -49,8 +49,8 @@ Depending on whether you override the `[Application](https://developer.android.
         override fun attachBaseContext(base: Context) {
             super.attachBaseContext(base)
     
-    				// Configure Ap Mobile SDK
-            ApMobileSdk.initACRA(**this**)
+    		// Configure Ap Mobile SDK
+            ApMobileSdk.initACRA(this)
         }
     }
     ```
@@ -63,7 +63,7 @@ Depending on whether you override the `[Application](https://developer.android.
         protected void attachBaseContext(@NonNull Context base) {
             super.attachBaseContext(base);
     
-    				// Configure Ap Mobile SDK
+    		// Configure Ap Mobile SDK
             ApMobileSdk.initACRA(this);
         }
     }

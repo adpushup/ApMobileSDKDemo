@@ -46,7 +46,7 @@ To prepare your app, complete the steps in the following sections.
         repositories {
             google()
             mavenCentral()
-    				maven { url 'https://jitpack.io' }
+    		maven { url 'https://jitpack.io' }
         }
     }
     
@@ -54,7 +54,7 @@ To prepare your app, complete the steps in the following sections.
         repositories {
             google()
             mavenCentral()
-    				maven { url 'https://jitpack.io' }
+    		maven { url 'https://jitpack.io' }
         }
     }
     ```
@@ -63,7 +63,7 @@ To prepare your app, complete the steps in the following sections.
     
     ```groovy
     dependencies {
-    	implementation 'com.adpushup:apmobilesdk:1.0.6'
+      implementation 'com.adpushup:apmobilesdk:1.0.6'
       implementation 'com.google.android.gms:play-services-ads:21.3.0'
     }
     ```
@@ -86,7 +86,7 @@ To prepare your app, complete the steps in the following sections.
     ```xml
     <manifest>
         <application
-                android:name="com.adpushup.apmobilesdk.ApMultiDexApplication" >
+            android:name="com.adpushup.apmobilesdk.ApMultiDexApplication" >
             ...
         </application>
     </manifest>
@@ -117,7 +117,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 				
-				// apAppId is your app ID in AdPushUp. It will be provided to you by AdPushup.
+		// apAppId is your app ID in AdPushUp. It will be provided to you by AdPushup.
         ApMobileSdk.init(this, "apAppId")
     }
 }

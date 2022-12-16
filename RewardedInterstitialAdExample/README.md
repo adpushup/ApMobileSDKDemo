@@ -19,12 +19,12 @@ Call `ApMobileSdk.showRewardedAd()`
 
 ```kotlin
 ApMobileSdk.showRewardedAd(this@MainActivity, "AP_PLACEMENT_ID", object : ApRewardedListener{
-		override fun onUserEarnedReward(type: String?, amount: Int) {
-		    // Reward User
+	override fun onUserEarnedReward(type: String?, amount: Int) {
+		// Reward User
     }
 
     override fun onComplete() {
-		    // Do your work after the rewarded ad is closed.
+		// Do your work after the rewarded ad is closed.
     }
 })
 ```
@@ -33,14 +33,14 @@ ApMobileSdk.showRewardedAd(this@MainActivity, "AP_PLACEMENT_ID", object : ApRewa
 
 ```java
 ApMobileSdk.showRewardedAd(MainActivity.this, "AP_PLACEMENT_ID", new ApRewardedListener() {
-		@Override
+	@Override
     public void onUserEarnedReward(String type, int amount) {
-		    // Reward User
+		// Reward User
     }
 
     @Override
     public void onComplete() {
-		    // Do your work after the rewarded ad is closed.
+		// Do your work after the rewarded ad is closed.
     }
 });
 ```
@@ -49,31 +49,31 @@ ApMobileSdk.showRewardedAd(MainActivity.this, "AP_PLACEMENT_ID", new ApRewardedL
 
 ```kotlin
 ApRewardedInterstitialListener {
-		// Called when user earned reward.
-		override fun onUserEarnedReward(type: String?, reward: Int) {}
+	// Called when user earned reward.
+	override fun onUserEarnedReward(type: String?, reward: Int) {}
 
-		// Called when the ad is clicked.
-		override fun onAdClicked() {}
+	// Called when the ad is clicked.
+	override fun onAdClicked() {}
 
-		// Called on the ad impression.
-		override fun onAdImpression() {}
+	// Called on the ad impression.
+	override fun onAdImpression() {}
 
-		// Called when the ad is shown.
-		override fun onAdShowedFullScreenContent() {}
+	// Called when the ad is shown.
+	override fun onAdShowedFullScreenContent() {}
 
-		// Called when the ad is dismissed.
-		override fun onAdDismissedFullScreenContent() {}
+	// Called when the ad is dismissed.
+	override fun onAdDismissedFullScreenContent() {}
 
-		// Called when the ad is not ready.
-		override fun onAdNotLoadedYet() {}
+	// Called when the ad is not ready.
+	override fun onAdNotLoadedYet() {}
 
-		// Best place to resume your work.
-		override fun onComplete() {}
+	// Best place to resume your work.
+	override fun onComplete() {}
 
-		// Called when the ad is unable to display due to an error.
-		override fun onError(code: Int, message: String?) {}
+	// Called when the ad is unable to display due to an error.
+	override fun onError(code: Int, message: String?) {}
 
-		// Called when the ad is displayed but with some warnings.
-		override fun onWarning(code: Int, message: String?) {}
+	// Called when the ad is displayed but with some warnings.
+	override fun onWarning(code: Int, message: String?) {}
 }
 ```
