@@ -74,7 +74,7 @@ To implement Rewarded Ads in your app, follow these steps:
     
     ```kotlin
     ApMobileSdk.showRewardedAd(this@MainActivity, "AP_PLACEMENT_ID", object : ApRewardedListener{
-    	override fun onUserEarnedReward(type: String?, amount: Int) {
+        override fun onUserEarnedReward(type: String?, amount: Int) {
     		// Reward User
         }
     
@@ -88,7 +88,7 @@ To implement Rewarded Ads in your app, follow these steps:
     
     ```java
     ApMobileSdk.showRewardedAd(MainActivity.this, "AP_PLACEMENT_ID", new ApRewardedListener() {
-    	@Override
+        @Override
         public void onUserEarnedReward(String type, int amount) {
     		// Reward User
         }
