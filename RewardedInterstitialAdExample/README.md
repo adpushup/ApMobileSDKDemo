@@ -19,7 +19,7 @@ Call `ApMobileSdk.showRewardedAd()`
 
 ```kotlin
 ApMobileSdk.showRewardedAd(this@MainActivity, "AP_PLACEMENT_ID", object : ApRewardedListener{
-	override fun onUserEarnedReward(type: String?, amount: Int) {
+    override fun onUserEarnedReward(type: String?, amount: Int) {
 		// Reward User
     }
 
@@ -33,7 +33,7 @@ ApMobileSdk.showRewardedAd(this@MainActivity, "AP_PLACEMENT_ID", object : ApRewa
 
 ```java
 ApMobileSdk.showRewardedAd(MainActivity.this, "AP_PLACEMENT_ID", new ApRewardedListener() {
-	@Override
+    @Override
     public void onUserEarnedReward(String type, int amount) {
 		// Reward User
     }
