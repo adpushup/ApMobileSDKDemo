@@ -43,8 +43,8 @@ To implement Native Ads in your app, follow these steps:
     
     ```java
     apNative.loadAd(context, it -> 
-    		mNativeAd = it;
-    		// It's best practice to always destroy the ad if the activity itself is destroyed.
+        mNativeAd = it;
+        // It's best practice to always destroy the ad if the activity itself is destroyed.
         if(MainActivity.this.isDestroyed()) mNativeAd.destroy();
     });
     ```
