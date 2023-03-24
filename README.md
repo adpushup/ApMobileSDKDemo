@@ -155,3 +155,7 @@ public class MainActivity extends AppCompatActivity {
 [Rewarded Interstitial Ads](RewardedInterstitialAdExample/README.md)
 
 [Native Ads](NativeAdExample/README.md)
+
+[In-Stream Ads](InstreamAdExampleWithApExoPlayer/README.md)
+
+[ApVideo](ApVideoExample/README.md)
