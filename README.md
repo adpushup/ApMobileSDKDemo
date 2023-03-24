@@ -2,7 +2,7 @@
 
 # **Get started**
 
-**Release version:  1.0.6 | Release date: 16.12.2022**
+**Release version:  1.1.0 | Release date: 24.03.2023**
 
 Follow this guide to get started with Ap Mobile SDK.
 
@@ -63,8 +63,8 @@ To prepare your app, complete the steps in the following sections.
     
     ```groovy
     dependencies {
-      implementation 'com.adpushup:apmobilesdk:1.0.6'
-      implementation 'com.google.android.gms:play-services-ads:21.3.0'
+      implementation 'com.adpushup:apmobilesdk:1.1.0'
+      implementation 'com.google.android.gms:play-services-ads:21.5.0'
     }
     ```
     
@@ -155,3 +155,7 @@ public class MainActivity extends AppCompatActivity {
 [Rewarded Interstitial Ads](RewardedInterstitialAdExample/README.md)
 
 [Native Ads](NativeAdExample/README.md)
+
+[In-Stream Ads](InstreamAdExampleWithApExoPlayer/README.md)
+
+[ApVideo](ApVideoExample/README.md)

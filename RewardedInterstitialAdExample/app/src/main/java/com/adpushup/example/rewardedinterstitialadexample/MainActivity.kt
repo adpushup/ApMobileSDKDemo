@@ -21,12 +21,17 @@ class MainActivity : AppCompatActivity() {
 
         binding.showAd.setOnClickListener {
             // Show Ad.
+            // NOTE: For Ad Optimisations, ApMobileSDK will will only show the ad at very specific time.
+            // So, It is safe to call this function at multiple events.
             ApMobileSdk.showRewardedInterstitialAd(this, getString(R.string.ad_placement_id), object :
                 ApRewardedInterstitialListener {
                 override fun onUserEarnedReward(type: String?, amount: Int) {
+                    // Reward user in case when user watched full ad.
                     Toast.makeText(this@MainActivity, "User Earned Reward: Amount: $amount of Type: $type", Toast.LENGTH_SHORT).show()
                 }
                 override fun onComplete() {
+                    // You don't have to worry about ad events. After calling ApMobileSdk.showRewardedInterstitialAd(),
+                    // resume your work here.
                     Toast.makeText(this@MainActivity, "Ad Completed.", Toast.LENGTH_SHORT).show()
                 }
             })

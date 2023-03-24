@@ -50,13 +50,13 @@ To implement Adaptive Banner Ads in your app, follow these steps:
     *Kotlin Example:*
     
     ```kotlin
-    apBanner.loadAdaptiveBanner(context, adSize, object : ApBannerListener{})
+    apBanner.loadAd(context, adSize, object : ApBannerListener{})
     ```
     
     *JAVA Example:*
     
     ```java
-    apBanner.loadAdaptiveBanner(context, adSize, new ApBannerListener() {});
+    apBanner.loadAd(context, adSize, new ApBannerListener() {});
     ```
 
     Here, the `adSize` is the size of the banner ad that you calculated at runtime.
