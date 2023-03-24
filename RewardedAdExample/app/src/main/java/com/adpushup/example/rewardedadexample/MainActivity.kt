@@ -22,6 +22,9 @@ class MainActivity : AppCompatActivity() {
         ApMobileSdk.init(this, getString(R.string.ap_app_id))
 
         binding.showAd.setOnClickListener {
+            // NOTE: For Ad Optimisations, ApMobileSDK will will only show the ad at very specific time.
+            // So, You need to check if the ad is ready.
+            // It is safe to call ApMobileSdk.isRewardedAdReady() multiple times.
             if(ApMobileSdk.isRewardedAdReady(getString(R.string.ad_placement_id))){
                 // Ask User if he want to watch an Rewarded Ad.
                 MaterialAlertDialogBuilder(this@MainActivity)
@@ -33,9 +36,12 @@ class MainActivity : AppCompatActivity() {
                         // User want to watch an ad. Show Ad.
                         ApMobileSdk.showRewardedAd(this, getString(R.string.ad_placement_id), object : ApRewardedListener {
                             override fun onUserEarnedReward(type: String?, amount: Int) {
+                                // Reward user in case when user watched full ad.
                                 Toast.makeText(this@MainActivity, "User Earned Reward: Amount: $amount of Type: $type", Toast.LENGTH_SHORT).show()
                             }
                             override fun onComplete() {
+                                // You don't have to worry about ad events. After calling ApMobileSdk.showRewardedAd(),
+                                // resume your work here.
                                 Toast.makeText(this@MainActivity, "Ad Completed.", Toast.LENGTH_SHORT).show()
                             }
                         })

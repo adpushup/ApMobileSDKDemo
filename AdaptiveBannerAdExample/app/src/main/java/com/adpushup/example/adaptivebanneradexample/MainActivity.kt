@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         // Loading Adaptive Banner Ad.
         val apBanner = ApBanner(getString(R.string.ad_placement_id))
         binding.adFrame.addView(apBanner.getAdView(this))
-        apBanner.loadAdaptiveBanner(this, adSize, object : ApBannerListener {})
+        apBanner.loadAd(this, adSize, object : ApBannerListener {})
 
     }
 
