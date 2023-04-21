@@ -5,7 +5,7 @@ App open ads are a special ad format intended for publishers wishing to monetize
 You can use our demo app as a reference project.
 
 <aside>
-📎 Demo App: [https://github.com/adpushup/ApMobileSDKDemo/tree/master/AppOpenAdExample](https://github.com/adpushup/ApMobileSDKDemo/tree/master/AppOpenAdExample)
+📎 Demo App: https://github.com/adpushup/ApMobileSDKDemo/tree/master/AppOpenAdExample
 
 </aside>
 
@@ -179,7 +179,7 @@ You can implement Ap App Open Ads in two ways:
 
 ### 2. Step By Step Procedure:
 
-To implement Interstitial Ads in your app, follow these steps:
+To implement App Open Ads in your app, follow these steps:
 
 **Extend the Application class**
 
@@ -191,7 +191,7 @@ To implement Interstitial Ads in your app, follow these steps:
     /** Application class that initializes, loads and shows ads when activities change states. */
     
     class MyApp: Application() {
-    		override fun attachBaseContext(base: Context) {
+        override fun attachBaseContext(base: Context) {
             super.attachBaseContext(base)
             // Initialising Ap Mobile SDK Error Detection Module.
             ApMobileSdk.initACRA(this)
@@ -210,7 +210,7 @@ To implement Interstitial Ads in your app, follow these steps:
     ```java
     /** Application class that initializes, loads and shows ads when activities change states. */
     public class MyApp extends Application {
-    		@Override
+        @Override
         protected void attachBaseContext(Context base) {
             super.attachBaseContext(base);
             // Initialising Ap Mobile SDK Error Detection Module.
@@ -252,7 +252,7 @@ To implement Interstitial Ads in your app, follow these steps:
     ...
     
     class MyApp: Application(), Application.ActivityLifecycleCallbacks, LifecycleEventObserver {
-    		...
+            ...
     }
     ```
     
@@ -262,7 +262,7 @@ To implement Interstitial Ads in your app, follow these steps:
     ...
     
     public class MyApp extends Application implements Application.ActivityLifecycleCallbacks, LifecycleEventObserver {
-    		...
+            ...
     }
     ```
     
@@ -274,9 +274,9 @@ To implement Interstitial Ads in your app, follow these steps:
     ...
     
     class MyApp: Application(), Application.ActivityLifecycleCallbacks, LifecycleEventObserver {
-    		private lateinit var apAppOpen: ApAppOpen
+        private lateinit var apAppOpen: ApAppOpen
         private var currentActivity: Activity? = null
-    		...
+        ...
     }
     ```
     
@@ -286,9 +286,9 @@ To implement Interstitial Ads in your app, follow these steps:
     ...
     
     public class MyApp extends Application implements Application.ActivityLifecycleCallbacks, LifecycleEventObserver {
-    		private ApAppOpen apAppOpen;
+        private ApAppOpen apAppOpen;
         private Activity currentActivity;
-    		...
+        ...
     }
     ```
     
@@ -301,7 +301,7 @@ To implement Interstitial Ads in your app, follow these steps:
     
     class MyApp: Application(), Application.ActivityLifecycleCallbacks, LifecycleEventObserver {
         private var currentActivity: Activity? = null
-    		...
+        ...
     
         override fun onActivityStarted(activity: Activity) {
             // Updating the currentActivity only when an ad is not showing.
@@ -331,7 +331,7 @@ To implement Interstitial Ads in your app, follow these steps:
     
     public class MyApp extends Application implements Application.ActivityLifecycleCallbacks, LifecycleEventObserver {
         private Activity currentActivity;
-    		...
+        ...
     
         @Override
         public void onActivityStarted(@NonNull Activity activity) {
@@ -369,11 +369,11 @@ To implement Interstitial Ads in your app, follow these steps:
     ...
     
     class MyApp: Application(), Application.ActivityLifecycleCallbacks, LifecycleEventObserver {
-    		private lateinit var apAppOpen: ApAppOpen
+        private lateinit var apAppOpen: ApAppOpen
         private var currentActivity: Activity? = null
-    		...
+        ...
     		
-    		override fun onStateChanged(source: LifecycleOwner, event: Lifecycle.Event) {
+        override fun onStateChanged(source: LifecycleOwner, event: Lifecycle.Event) {
             if(event == Lifecycle.Event.ON_START) {
                 // Show the ad (if available) when the app moves to foreground.
                 currentActivity?.let {
@@ -382,7 +382,7 @@ To implement Interstitial Ads in your app, follow these steps:
             }
         }
     		
-    		...
+        ...
     }
     ```
     
@@ -392,11 +392,11 @@ To implement Interstitial Ads in your app, follow these steps:
     ...
     
     public class MyApp extends Application implements Application.ActivityLifecycleCallbacks, LifecycleEventObserver {
-    		private ApAppOpen apAppOpen;
+        private ApAppOpen apAppOpen;
         private Activity currentActivity;
-    		...
+        ...
     		
-    		@Override
+        @Override
         public void onStateChanged(@NonNull LifecycleOwner lifecycleOwner, @NonNull Lifecycle.Event event) {
             if(event == Lifecycle.Event.ON_START) {
                 // Show the ad (if available) when the app moves to foreground.
@@ -406,7 +406,7 @@ To implement Interstitial Ads in your app, follow these steps:
             }
         }
     		
-    		...
+        ...
     }
     ```
     
