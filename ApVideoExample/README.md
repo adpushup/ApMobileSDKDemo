@@ -21,13 +21,13 @@ Before using **ApVideo**, Add the dependencies for the **Exo Player** to your mo
 ```groovy
 dependencies {
 	// Ap Mobile SDK + Google Ads SDK
-  implementation 'com.adpushup:apmobilesdk:1.1.0'
-  implementation 'com.google.android.gms:play-services-ads:21.5.0'
+  implementation 'com.adpushup:apmobilesdk:1.2.1'
+  implementation 'com.google.android.gms:play-services-ads:22.0.0'
 
   // Exo Player
-  implementation 'com.google.android.exoplayer:exoplayer-hls:2.18.4'
-  implementation 'com.google.android.exoplayer:exoplayer-ui:2.18.4'
-  implementation 'com.google.android.exoplayer:exoplayer-core:2.18.4'
+  implementation 'com.google.android.exoplayer:exoplayer-hls:2.18.5'
+  implementation 'com.google.android.exoplayer:exoplayer-ui:2.18.5'
+  implementation 'com.google.android.exoplayer:exoplayer-core:2.18.5'
 }
 ```
 
