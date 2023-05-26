@@ -8,7 +8,7 @@ It uses **ApExoPlayer** internally for best performance.
 You can use our demo app as a reference project.
 
 <aside>
-📎 Demo App: [https://github.com/adpushup/ApMobileSDKDemo/tree/master/ApVideoExample](https://github.com/adpushup/ApMobileSDKDemo/tree/master/ApVideoExample)
+📎 Demo App: https://github.com/adpushup/ApMobileSDKDemo/tree/master/ApVideoExample
 
 </aside>
 
@@ -21,13 +21,13 @@ Before using **ApVideo**, Add the dependencies for the **Exo Player** to your mo
 ```groovy
 dependencies {
 	// Ap Mobile SDK + Google Ads SDK
-  implementation 'com.adpushup:apmobilesdk:1.2.1'
-  implementation 'com.google.android.gms:play-services-ads:22.0.0'
+  implementation 'com.adpushup:apmobilesdk:1.3.1'
+  implementation 'com.google.android.gms:play-services-ads:22.1.0'
 
   // Exo Player
-  implementation 'com.google.android.exoplayer:exoplayer-hls:2.18.5'
-  implementation 'com.google.android.exoplayer:exoplayer-ui:2.18.5'
-  implementation 'com.google.android.exoplayer:exoplayer-core:2.18.5'
+  implementation 'com.google.android.exoplayer:exoplayer-hls:2.18.7'
+  implementation 'com.google.android.exoplayer:exoplayer-ui:2.18.7'
+  implementation 'com.google.android.exoplayer:exoplayer-core:2.18.7'
 }
 ```
 

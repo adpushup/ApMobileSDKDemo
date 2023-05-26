@@ -1,45 +1,39 @@
-# About Ap Multidex Application
+# About Ap Application
 
 Ap Mobile SDK uses [ACRA](https://github.com/ACRA/acra) Lib. to detect & report any errors in both Ap Mobile SDK as well as in your app. We keep tracking these errors to ensure smooth app experiences for your users.  This is essential to initialize AdPushup’s ACRA Module for the proper working of Ap Mobile SDK. 
-
-This also adds support for Multidex in your app without the need to extend your application to MultidexApplication. 
 
 To do that you can follow the simple steps,
 
 Depending on whether you override the [Application](https://developer.android.com/reference/android/app/Application) class, perform one of the following:
 
-- If you *do not* override the [Application](https://developer.android.com/reference/android/app/Application) class OR If you override the [Application](https://developer.android.com/reference/android/app/Application) class just for enabling **multidex**, edit your manifest file to set `android:name` in the `<application>` tag as follows:
+- If you *do not* override the [Application](https://developer.android.com/reference/android/app/Application) class, edit your manifest file to set `android:name` in the `<application>` tag as follows:
     
     ```xml
     <manifest>
         <application
-            android:name="com.adpushup.apmobilesdk.ApMultiDexApplication" >
+            android:name="com.adpushup.apmobilesdk.ApApplication" >
             ...
         </application>
     </manifest>
     ```
     
-- If you do override the [Application](https://developer.android.com/reference/android/app/Application) class, change it to extend `ApMultiDexApplication` (if possible) as follows:
+- If you do override the [Application](https://developer.android.com/reference/android/app/Application) class, change it to extend `ApApplication` (if possible) as follows:
     
-    > Don’t forget to add the Multidex dependency in your `build.gradle` file.
-    > 
     
     *Kotlin Example:*
     
     ```kotlin
-    class MyApplication : ApMultiDexApplication() {...}
+    class MyApplication : ApApplication() {...}
     ```
     
     *JAVA Example:*
     
     ```java
-    public class MyApplication extends ApMultiDexApplication { }
+    public class MyApplication extends ApApplication { }
     ```
     
 - Or if you do override the [Application](https://developer.android.com/reference/android/app/Application) class but it's not possible to change the base class, then you can instead override the [attachBaseContext()](https://developer.android.com/reference/android/content/ContextWrapper#attachBaseContext(android.content.Context)) method and call `ApMobileSdk.initACRA(this)` to configure Ap Mobile SDK:
     
-    > Don’t forget to add the Multidex dependency in your `build.gradle` file.
-    > 
     
     *Kotlin Example:*
     
