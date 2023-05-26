@@ -26,13 +26,13 @@ Before using **ApExoPlayer**, Add the dependencies for the **Exo Player** to you
 ```groovy
 dependencies {
 	// Ap Mobile SDK + Google Ads SDK
-  implementation 'com.adpushup:apmobilesdk:1.2.1'
-  implementation 'com.google.android.gms:play-services-ads:22.0.0'
+  implementation 'com.adpushup:apmobilesdk:1.3.1'
+  implementation 'com.google.android.gms:play-services-ads:22.1.0'
 
   // Exo Player
-  implementation 'com.google.android.exoplayer:exoplayer-hls:2.18.5'
-  implementation 'com.google.android.exoplayer:exoplayer-ui:2.18.5'
-  implementation 'com.google.android.exoplayer:exoplayer-core:2.18.5'
+  implementation 'com.google.android.exoplayer:exoplayer-hls:2.18.7'
+  implementation 'com.google.android.exoplayer:exoplayer-ui:2.18.7'
+  implementation 'com.google.android.exoplayer:exoplayer-core:2.18.7'
 }
 ```
 
