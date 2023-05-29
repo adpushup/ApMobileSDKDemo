@@ -81,7 +81,7 @@ To prepare your app, complete the steps in the following sections.
     </manifest>
     ```
     
-4. Change your app’s Application Class with ApMultidexApplication. 
+4. Change your app’s Application Class with ApApplication. 
     
     ```xml
     <manifest>
@@ -92,9 +92,9 @@ To prepare your app, complete the steps in the following sections.
     </manifest>
     ```
     
-    Refer [Here](ApMultiDexApplicationGuide.md) for more information:
+    Refer [Here](ApApplicationGuide.md) for more information:
     
-    [About Ap Application](ApMultiDexApplicationGuide.md)
+    [About Ap Application](ApApplicationGuide.md)
     
 
 ---
