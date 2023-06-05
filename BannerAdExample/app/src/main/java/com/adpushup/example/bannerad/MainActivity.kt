@@ -7,10 +7,12 @@ import com.adpushup.apmobilesdk.ApMobileSdk
 import com.adpushup.apmobilesdk.ads.ApBanner
 import com.adpushup.apmobilesdk.interfaces.ApBannerListener
 import com.adpushup.example.bannerad.databinding.ActivityMainBinding
+import com.google.android.gms.ads.admanager.AdManagerAdView
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private lateinit var apBanner: ApBanner
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,8 +23,14 @@ class MainActivity : AppCompatActivity() {
         ApMobileSdk.init(this, getString(R.string.ap_app_id))
 
         // Loading Banner Ad.
-        val apBanner = ApBanner(getString(R.string.ad_placement_id))
+        apBanner = ApBanner(getString(R.string.ad_placement_id))
         binding.adFrame.addView(apBanner.getAdView(this))
         apBanner.loadAd(this, object : ApBannerListener {})
+    }
+
+    override fun onDestroy() {
+        // Destroy the Banner Ad
+        apBanner.destroy()
+        super.onDestroy()
     }
 }
