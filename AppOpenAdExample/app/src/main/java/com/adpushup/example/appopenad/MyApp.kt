@@ -35,7 +35,7 @@ class MyApp: Application(), Application.ActivityLifecycleCallbacks, LifecycleEve
             // Show the ad (if available) when the app moves to foreground.
             // NOTE: For Ad Optimisations, ApMobileSDK will will only show the ad at very specific time.
             currentActivity?.let {
-                apAppOpen.showAd(it) {}
+                apAppOpen.showAd(it, getString(R.string.ad_placement_id)) {}
             }
         }
     }

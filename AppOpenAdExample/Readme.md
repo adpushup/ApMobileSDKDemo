@@ -18,6 +18,8 @@ You can implement Ap App Open Ads in two ways:
 
 ### 1. Quick Implementation
 
+> **`AP_PLACEMENT_ID` is like an AdUnitID and it will be provided to you by AdPushup.** 
+
 1. Create a **MyApp** Class in your app code and copy the following code in it:
     
     *Kotlin Example:*
@@ -57,7 +59,7 @@ You can implement Ap App Open Ads in two ways:
             if(event == Lifecycle.Event.ON_START) {
                 // Show the ad (if available) when the app moves to foreground.
                 currentActivity?.let {
-                    apAppOpen.showAd(it) {}
+                    apAppOpen.showAd(it, "AP_PLACEMENT_ID") {}
                 }
             }
         }
@@ -127,7 +129,7 @@ You can implement Ap App Open Ads in two ways:
             if(event == Lifecycle.Event.ON_START) {
                 // Show the ad (if available) when the app moves to foreground.
                 if(currentActivity != null){
-                    apAppOpen.showAd(currentActivity, () -> {});
+                    apAppOpen.showAd(currentActivity, "AP_PLACEMENT_ID", () -> {});
                 }
             }
         }
@@ -377,7 +379,7 @@ To implement App Open Ads in your app, follow these steps:
             if(event == Lifecycle.Event.ON_START) {
                 // Show the ad (if available) when the app moves to foreground.
                 currentActivity?.let {
-                    apAppOpen.showAd(it) {}
+                    apAppOpen.showAd(it, "AP_PLACEMENT_ID") {}
                 }
             }
         }
@@ -401,7 +403,7 @@ To implement App Open Ads in your app, follow these steps:
             if(event == Lifecycle.Event.ON_START) {
                 // Show the ad (if available) when the app moves to foreground.
                 if(currentActivity != null){
-                    apAppOpen.showAd(currentActivity, () -> {});
+                    apAppOpen.showAd(currentActivity, "AP_PLACEMENT_ID", () -> {});
                 }
             }
         }
