@@ -2,7 +2,7 @@
 
 # **Get started**
 
-**Release version:  1.3.2 | Release date: 05.06.2023**
+**Release version:  1.4.0 | Release date: 25.07.2023**
 
 Follow this guide to get started with Ap Mobile SDK.
 
@@ -63,8 +63,8 @@ To prepare your app, complete the steps in the following sections.
     
     ```groovy
     dependencies {
-      implementation 'com.adpushup:apmobilesdk:1.3.2'
-      implementation 'com.google.android.gms:play-services-ads:22.1.0'
+      implementation 'com.adpushup:apmobilesdk:1.4.0'
+      implementation 'com.google.android.gms:play-services-ads:22.2.0'
     }
     ```
     
