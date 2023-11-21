@@ -13,37 +13,59 @@ You can use our demo app as a reference project.
 
 To implement Rewarded Ads in your app, follow these steps:
 
-Call `ApMobileSdk.showRewardedAd()` 
-
-*Kotlin Example:*
-
-```kotlin
-ApMobileSdk.showRewardedAd(this@MainActivity, "AP_PLACEMENT_ID", object : ApRewardedListener{
-    override fun onUserEarnedReward(type: String?, amount: Int) {
-		// Reward User
+1. Check If Rewarded Interstitial Ad is ready.
+  
+    *Kotlin Example:*
+    
+    ```kotlin
+    if(ApMobileSdk.isRewardedInterstitialAdReady("AP_PLACEMENT_ID")){
+    	// Ad is available. You can show a timer before showing the Rewarded Interstitial Ad.
+    	...
     }
-
-    override fun onComplete() {
-		// Do your work after the rewarded ad is closed.
+    ```
+    
+    *JAVA Example:*
+    
+    ```java
+    if(ApMobileSdk.isRewardedInterstitialAdReady("AP_PLACEMENT_ID")){
+    	// Ad is available. You can show a timer before showing the Rewarded Interstitial Ad.
+    	...
     }
-})
-```
+    ```
 
-*JAVA Example:*
+2. Show the ad to user if user want to see the ad within timer limits.
 
-```java
-ApMobileSdk.showRewardedAd(MainActivity.this, "AP_PLACEMENT_ID", new ApRewardedListener() {
-    @Override
-    public void onUserEarnedReward(String type, int amount) {
-		// Reward User
-    }
+	Just Call `ApMobileSdk.showRewardedInterstitialAd()` 
 
-    @Override
-    public void onComplete() {
-		// Do your work after the rewarded ad is closed.
-    }
-});
-```
+	*Kotlin Example:*
+
+	```kotlin
+	ApMobileSdk.showRewardedInterstitialAd(this@MainActivity, "AP_PLACEMENT_ID", object : ApRewardedListener{
+		override fun onUserEarnedReward(type: String?, amount: Int) {
+			// Reward User
+		}
+
+		override fun onComplete() {
+			// Do your work after the rewarded ad is closed.
+		}
+	})
+	```
+
+	*JAVA Example:*
+
+	```java
+	ApMobileSdk.showRewardedInterstitialAd(MainActivity.this, "AP_PLACEMENT_ID", new ApRewardedListener() {
+		@Override
+		public void onUserEarnedReward(String type, int amount) {
+			// Reward User
+		}
+
+		@Override
+		public void onComplete() {
+			// Do your work after the rewarded ad is closed.
+		}
+	});
+	```
 
 ## Supported Callbacks
 

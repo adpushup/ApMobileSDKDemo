@@ -21,13 +21,13 @@ Before using **ApVideo**, Add the dependencies for the **Exo Player** to your mo
 ```groovy
 dependencies {
 	// Ap Mobile SDK + Google Ads SDK
-  implementation 'com.adpushup:apmobilesdk:1.4.0'
-  implementation 'com.google.android.gms:play-services-ads:22.2.0'
+  implementation 'com.adpushup:apmobilesdk:1.5.1'
+  implementation 'com.google.android.gms:play-services-ads:22.5.0'
 
-  // Exo Player
-  implementation 'com.google.android.exoplayer:exoplayer-hls:2.19.0'
-  implementation 'com.google.android.exoplayer:exoplayer-ui:2.19.0'
-  implementation 'com.google.android.exoplayer:exoplayer-core:2.19.0'
+  // Media3 Exo Player
+  implementation 'androidx.media3:media3-exoplayer:1.2.0'
+  implementation 'androidx.media3:media3-ui:1.2.0'
+  implementation 'androidx.media3:media3-exoplayer-hls:1.2.0'
 }
 ```
 
@@ -35,10 +35,10 @@ dependencies {
 
 To implement **ApExoPlayer** in your app, follow these steps:
 
-1. Add `StyledPlayerView` in your Layout Resource File:
+1. Add `PlayerView` in your Layout Resource File:
     
     ```xml
-    <com.google.android.exoplayer2.ui.StyledPlayerView
+    <androidx.media3.ui.PlayerView
         android:id="@+id/player"
         android:layout_width="360dp"
         android:layout_height="240dp"/>
@@ -61,7 +61,7 @@ To implement **ApExoPlayer** in your app, follow these steps:
     
     		...
             
-        val playerView = findViewById<StyledPlayerView>(R.id.player)
+        val playerView = findViewById<PlayerView>(R.id.player)
            
         apVideo = ApVideo("AP_PLACEMENT_ID", playerView)
          
@@ -85,7 +85,7 @@ To implement **ApExoPlayer** in your app, follow these steps:
     
     		...
     
-        StyledPlayerView playerView = findViewById(R.id.player);
+        PlayerView playerView = findViewById(R.id.player);
     
         apVideo = new ApVideo("AP_PLACEMENT_ID", playerView);
     
