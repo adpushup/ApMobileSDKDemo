@@ -2,12 +2,10 @@ package com.adpushup.example.bannerad
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.WindowCompat
 import com.adpushup.apmobilesdk.ApMobileSdk
 import com.adpushup.apmobilesdk.ads.ApBanner
 import com.adpushup.apmobilesdk.interfaces.ApBannerListener
 import com.adpushup.example.bannerad.databinding.ActivityMainBinding
-import com.google.android.gms.ads.admanager.AdManagerAdView
 
 class MainActivity : AppCompatActivity() {
 

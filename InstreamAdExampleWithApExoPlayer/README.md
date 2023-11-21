@@ -2,8 +2,8 @@
 
 In-Stream ads are the multimedia ads that you can insert between video content of your app.
 
-To integrate In-stream ads into your app, You can use **ApExoPlayer** of **ApMobileSDK**.
-It is a simplified version of Exo Player that has built in support for IMA Ads.
+To integrate In-stream ads into your app, You can use **ApPlayer** of **ApMobileSDK**.
+It is a simplified version of Media3 Exo Player that has built in support for IMA Ads.
 
 <aside>
 💡 Note: ApMobileSDK also support custom video players. It can generate VAST Tags in realtime that you can use in your custom player. Check out the Last section of this doc for more info.
@@ -17,39 +17,39 @@ You can use our demo app as a reference project.
 
 </aside>
 
-# ApExoPlayer Implementation Guide:
+# ApPlayer Implementation Guide:
 
 ## Configure your app:
 
-Before using **ApExoPlayer**, Add the dependencies for the **Exo Player** to your module's app-level [Gradle](https://gradle.org/) file, normally `app/build.gradle`:
+Before using **ApPlayer**, Add the dependencies for the **Media3 Exo Player** to your module's app-level [Gradle](https://gradle.org/) file, normally `app/build.gradle`:
 
 ```groovy
 dependencies {
 	// Ap Mobile SDK + Google Ads SDK
-  implementation 'com.adpushup:apmobilesdk:1.4.0'
-  implementation 'com.google.android.gms:play-services-ads:22.2.0'
+  implementation 'com.adpushup:apmobilesdk:1.5.0'
+  implementation 'com.google.android.gms:play-services-ads:22.5.0'
 
-  // Exo Player
-  implementation 'com.google.android.exoplayer:exoplayer-hls:2.19.0'
-  implementation 'com.google.android.exoplayer:exoplayer-ui:2.19.0'
-  implementation 'com.google.android.exoplayer:exoplayer-core:2.19.0'
+  // Media3 Exo Player
+  implementation 'androidx.media3:media3-exoplayer:1.2.0'
+  implementation 'androidx.media3:media3-ui:1.2.0'
+  implementation 'androidx.media3:media3-exoplayer-hls:1.2.0'
 }
 ```
 
 ## Implementation Guide:
 
-To implement **ApExoPlayer** in your app, follow these steps:
+To implement **ApPlayer** in your app, follow these steps:
 
 1. Add `StyledPlayerView` in your Layout Resource File:
     
     ```xml
-    <com.google.android.exoplayer2.ui.StyledPlayerView
+    <androidx.media3.ui.PlayerView
         android:id="@+id/player"
         android:layout_width="360dp"
         android:layout_height="240dp"/>
     ```
     
-2. Create and Initialise **ApExoPlayer.** 
+2. Create and Initialise **ApPlayer.** 
     
     > **`AP_PLACEMENT_ID` is like an AdUnitID and it will be provided to you by AdPushup.**
     > 
@@ -57,7 +57,7 @@ To implement **ApExoPlayer** in your app, follow these steps:
     *Kotlin Example:*
     
     ```kotlin
-    private var apExoPlayer: ApExoPlayer? = null
+    private var apPlayer: ApPlayer? = null
     
     ...
     
@@ -66,11 +66,11 @@ To implement **ApExoPlayer** in your app, follow these steps:
     
     		...
             
-        val playerView = findViewById<StyledPlayerView>(R.id.player)
+        val playerView = findViewById<PlayerView>(R.id.player)
         val uri = Uri.parse("https://YOUR_VIDEO_URL")
            
-        apExoPlayer = ApExoPlayer("AP_PLACEMENT_ID", playerView)
-        apExoPlayer!!.init(this, uri)
+        apPlayer = ApPlayer("AP_PLACEMENT_ID", playerView)
+        apPlayer!!.init(this, uri)
          
     		...   
     }
@@ -82,7 +82,7 @@ To implement **ApExoPlayer** in your app, follow these steps:
     *JAVA Example:*
     
     ```java
-    private ApExoPlayer apExoPlayer;
+    private ApPlayer apPlayer;
     
     ...
     
@@ -92,12 +92,12 @@ To implement **ApExoPlayer** in your app, follow these steps:
     
     		...
     
-        StyledPlayerView playerView = findViewById(R.id.player);
+        PlayerView playerView = findViewById(R.id.player);
         Uri uri = Uri.parse("https://YOUR_VIDEO_URL.mp4");
     
-    		// Create new ApExoPlayer.
-        apExoPlayer = new ApExoPlayer("AP_PLACEMENT_ID", playerView);
-        apExoPlayer.init(this, uri);
+    		// Create new ApPlayer.
+        apPlayer = new ApPlayer("AP_PLACEMENT_ID", playerView);
+        apPlayer.init(this, uri);
     
     		...
     }
@@ -113,34 +113,34 @@ To implement **ApExoPlayer** in your app, follow these steps:
     override fun onStart() {
         super.onStart()
         if (Build.VERSION.SDK_INT > 23) {
-            apExoPlayer?.start()
+            apPlayer?.start()
         }
     }
     
     override fun onResume() {
         super.onResume()
         if (Build.VERSION.SDK_INT <= 23) {
-            apExoPlayer?.start()
+            apPlayer?.start()
         }
     }
     
     override fun onPause() {
         super.onPause()
         if (Build.VERSION.SDK_INT <= 23) {
-            apExoPlayer?.stop()
+            apPlayer?.stop()
         }
     }
     
     override fun onStop() {
         super.onStop()
         if (Build.VERSION.SDK_INT > 23) {
-            apExoPlayer?.stop()
+            apPlayer?.stop()
         }
     }
     
     override fun onDestroy() {
         super.onDestroy()
-        apExoPlayer?.destroy()
+        apPlayer?.destroy()
     }
     ```
     
@@ -151,7 +151,7 @@ To implement **ApExoPlayer** in your app, follow these steps:
     protected void onStart() {
         super.onStart();
         if (Build.VERSION.SDK_INT > 23) {
-            apExoPlayer.start();
+            apPlayer.start();
         }
     }
     
@@ -159,7 +159,7 @@ To implement **ApExoPlayer** in your app, follow these steps:
     protected void onResume() {
         super.onResume();
         if (Build.VERSION.SDK_INT <= 23) {
-            apExoPlayer.start();
+            apPlayer.start();
         }
     }
     
@@ -167,7 +167,7 @@ To implement **ApExoPlayer** in your app, follow these steps:
     protected void onPause() {
         super.onPause();
         if (Build.VERSION.SDK_INT <= 23) {
-            apExoPlayer.stop();
+            apPlayer.stop();
         }
     }
     
@@ -175,18 +175,18 @@ To implement **ApExoPlayer** in your app, follow these steps:
     protected void onStop() {
         super.onStop();
         if (Build.VERSION.SDK_INT > 23) {
-            apExoPlayer.stop();
+            apPlayer.stop();
         }
     }
     
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        apExoPlayer.destroy();
+        apPlayer.destroy();
     }
     ```
     
-4. (**Optional But Recommended)** Set Activity’s `configChanges` to `“keyboardHidden|orientation|screenSize”` to prevent recreation of **ApExoPlayer**. 
+4. (**Optional But Recommended)** Set Activity’s `configChanges` to `“keyboardHidden|orientation|screenSize”` to prevent recreation of **ApPlayer**. 
 Modify Your Activity Tag in your app’s `AndroidManifest.xml` file as shown below:
     
     ```xml
@@ -207,13 +207,13 @@ Modify Your Activity Tag in your app’s `AndroidManifest.xml` file as shown bel
     *Kotlin Example:*
     
     ```kotlin
-    apExoPlayer?.playVideo()
+    apPlayer?.playVideo()
     ```
     
     *JAVA Example:*
     
     ```java
-    apExoPlayer.playVideo();
+    apPlayer.playVideo();
     ```
     
 - **Pause Video:**
@@ -223,13 +223,13 @@ Modify Your Activity Tag in your app’s `AndroidManifest.xml` file as shown bel
     *Kotlin Example:*
     
     ```kotlin
-    apExoPlayer?.pauseVideo()
+    apPlayer?.pauseVideo()
     ```
     
     *JAVA Example:*
     
     ```java
-    apExoPlayer.pauseVideo();
+    apPlayer.pauseVideo();
     ```
     
 - **Is Video Playing:**
@@ -239,13 +239,13 @@ Modify Your Activity Tag in your app’s `AndroidManifest.xml` file as shown bel
     *Kotlin Example:*
     
     ```kotlin
-    val isVideoPlaying : Boolean? = apExoPlayer?.isPlaying()
+    val isVideoPlaying : Boolean? = apPlayer?.isPlaying()
     ```
     
     *JAVA Example:*
     
     ```java
-    boolean isVideoPlaying = apExoPlayer.isPlaying();
+    boolean isVideoPlaying = apPlayer.isPlaying();
     ```
     
 - **Add Full Screen Button:**
@@ -255,7 +255,7 @@ Modify Your Activity Tag in your app’s `AndroidManifest.xml` file as shown bel
     *Kotlin Example:*
     
     ```kotlin
-    apExoPlayer?.setFullScreenListener(this) {
+    apPlayer?.setFullScreenListener(this) {
         // Do Something when full screen mode changes.
     }
     ```
@@ -263,7 +263,7 @@ Modify Your Activity Tag in your app’s `AndroidManifest.xml` file as shown bel
     *JAVA Example:*
     
     ```java
-    apExoPlayer.setFullScreenListener(this, isFullScreen -> {
+    apPlayer.setFullScreenListener(this, isFullScreen -> {
     		// Do Something when full screen mode changes.
     });
     ```
@@ -278,13 +278,13 @@ Modify Your Activity Tag in your app’s `AndroidManifest.xml` file as shown bel
     *Kotlin Example:*
     
     ```kotlin
-    apExoPlayer?.setAutoPlay(true)
+    apPlayer?.setAutoPlay(true)
     ```
     
     *JAVA Example:*
     
     ```java
-    apExoPlayer.setAutoPlay(true);
+    apPlayer.setAutoPlay(true);
     ```
     
 - **Shuffle Mode**
@@ -294,13 +294,13 @@ Modify Your Activity Tag in your app’s `AndroidManifest.xml` file as shown bel
     *Kotlin Example:*
     
     ```kotlin
-    apExoPlayer?.setShuffleModeEnabled(true) 
+    apPlayer?.setShuffleModeEnabled(true) 
     ```
     
     *JAVA Example:*
     
     ```java
-    apExoPlayer.setShuffleModeEnabled(true);
+    apPlayer.setShuffleModeEnabled(true);
     ```
     
 - **Repeat Mode**
@@ -319,22 +319,22 @@ Modify Your Activity Tag in your app’s `AndroidManifest.xml` file as shown bel
     
     ```kotlin
     // Repeat Mode All - loops all videos of the playlist.
-    apExoPlayer?.setRepeatModeAll()
+    apPlayer?.setRepeatModeAll()
     // Repeat Mode One - loops current video of the playlist.
-    apExoPlayer?.setRepeatModeOne()
+    apPlayer?.setRepeatModeOne()
     // Repeat Mode Off - doesn't repeat videos. (Default Setting)
-    apExoPlayer?.setRepeatModeOff()
+    apPlayer?.setRepeatModeOff()
     ```
     
     *JAVA Example:*
     
     ```java
     // Repeat Mode All - loops all videos of the playlist.
-    apExoPlayer.setRepeatModeAll();
+    apPlayer.setRepeatModeAll();
     // Repeat Mode One - loops current video of the playlist.
-    apExoPlayer.setRepeatModeOne();
+    apPlayer.setRepeatModeOne();
     // Repeat Mode Off - doesn't repeat videos. (Default Setting)
-    apExoPlayer.setRepeatModeOff();
+    apPlayer.setRepeatModeOff();
     ```
     
 
@@ -347,13 +347,13 @@ Modify Your Activity Tag in your app’s `AndroidManifest.xml` file as shown bel
     *Kotlin Example:*
     
     ```kotlin
-    apExoPlayer?.addMediaToPlaylist(Uri.parse("https://YOUR_VIDEO_URL.mp4"))
+    apPlayer?.addMediaToPlaylist(Uri.parse("https://YOUR_VIDEO_URL.mp4"))
     ```
     
     *JAVA Example:*
     
     ```java
-    apExoPlayer.addMediaToPlaylist(Uri.parse("https://YOUR_VIDEO_URL.mp4"));
+    apPlayer.addMediaToPlaylist(Uri.parse("https://YOUR_VIDEO_URL.mp4"));
     ```
     
 - **Add Media At an Index**
@@ -365,13 +365,13 @@ Modify Your Activity Tag in your app’s `AndroidManifest.xml` file as shown bel
     *Kotlin Example:*
     
     ```kotlin
-    apExoPlayer?.addMediaToPlaylist(16, Uri.parse("https://YOUR_VIDEO_URL.mp4"))
+    apPlayer?.addMediaToPlaylist(16, Uri.parse("https://YOUR_VIDEO_URL.mp4"))
     ```
     
     *JAVA Example:*
     
     ```java
-    apExoPlayer.addMediaToPlaylist(16, Uri.parse("https://YOUR_VIDEO_URL.mp4"));
+    apPlayer.addMediaToPlaylist(16, Uri.parse("https://YOUR_VIDEO_URL.mp4"));
     ```
     
 - **Move Media In Playlist**
@@ -383,13 +383,13 @@ Modify Your Activity Tag in your app’s `AndroidManifest.xml` file as shown bel
     *Kotlin Example:*
     
     ```kotlin
-    apExoPlayer?.moveMediaInPlaylist(8, 4)
+    apPlayer?.moveMediaInPlaylist(8, 4)
     ```
     
     *JAVA Example:*
     
     ```java
-    apExoPlayer.moveMediaInPlaylist(8, 4);
+    apPlayer.moveMediaInPlaylist(8, 4);
     ```
     
 - **Remove Media From Playlist**
@@ -401,13 +401,13 @@ Modify Your Activity Tag in your app’s `AndroidManifest.xml` file as shown bel
     *Kotlin Example:*
     
     ```kotlin
-    apExoPlayer?.removeMediaInPlaylist(5)
+    apPlayer?.removeMediaInPlaylist(5)
     ```
     
     *JAVA Example:*
     
     ```java
-    apExoPlayer.removeMediaInPlaylist(5);
+    apPlayer.removeMediaInPlaylist(5);
     ```
     
 - **Clear Playlist**
@@ -417,13 +417,13 @@ Modify Your Activity Tag in your app’s `AndroidManifest.xml` file as shown bel
     *Kotlin Example:*
     
     ```kotlin
-    apExoPlayer?.clearPlaylist()
+    apPlayer?.clearPlaylist()
     ```
     
     *JAVA Example:*
     
     ```java
-    apExoPlayer.clearPlaylist();
+    apPlayer.clearPlaylist();
     ```
     
 - **Get Playlist Length**
@@ -433,13 +433,13 @@ Modify Your Activity Tag in your app’s `AndroidManifest.xml` file as shown bel
     *Kotlin Example:*
     
     ```kotlin
-    val length : Int? = apExoPlayer?.getPlaylistLength()
+    val length : Int? = apPlayer?.getPlaylistLength()
     ```
     
     *JAVA Example:*
     
     ```java
-    int length = apExoPlayer.getPlaylistLength();
+    int length = apPlayer.getPlaylistLength();
     ```
     
 - **Get Current Media**
@@ -449,13 +449,13 @@ Modify Your Activity Tag in your app’s `AndroidManifest.xml` file as shown bel
     *Kotlin Example:*
     
     ```kotlin
-    val mediaUri = apExoPlayer?.getCurrentMedia()
+    val mediaUri = apPlayer?.getCurrentMedia()
     ```
     
     *JAVA Example:*
     
     ```java
-    Uri mediaUri = apExoPlayer.getCurrentMedia();
+    Uri mediaUri = apPlayer.getCurrentMedia();
     ```
     
 - **Get Media At an Index**
@@ -467,13 +467,13 @@ Modify Your Activity Tag in your app’s `AndroidManifest.xml` file as shown bel
     *Kotlin Example:*
     
     ```kotlin
-    val mediaUri = apExoPlayer?.getMediaAt(5)
+    val mediaUri = apPlayer?.getMediaAt(5)
     ```
     
     *JAVA Example:*
     
     ```java
-    Uri mediaUri = apExoPlayer.getMediaAt(5);
+    Uri mediaUri = apPlayer.getMediaAt(5);
     ```
     
 - **Has Next Media**
@@ -483,13 +483,13 @@ Modify Your Activity Tag in your app’s `AndroidManifest.xml` file as shown bel
     *Kotlin Example:*
     
     ```kotlin
-    val hasNextMediaItem : Boolean? = apExoPlayer?.hasNextMedia()
+    val hasNextMediaItem : Boolean? = apPlayer?.hasNextMedia()
     ```
     
     *JAVA Example:*
     
     ```java
-    boolean hasNextMediaItem = apExoPlayer.hasNextMedia();
+    boolean hasNextMediaItem = apPlayer.hasNextMedia();
     ```
     
 - **Get Next Media Index**
@@ -499,13 +499,13 @@ Modify Your Activity Tag in your app’s `AndroidManifest.xml` file as shown bel
     *Kotlin Example:*
     
     ```kotlin
-    val nextMediaIndex : Int? = apExoPlayer?.getNextMediaIndex()
+    val nextMediaIndex : Int? = apPlayer?.getNextMediaIndex()
     ```
     
     *JAVA Example:*
     
     ```java
-    int nextMediaIndex = apExoPlayer.getNextMediaIndex();
+    int nextMediaIndex = apPlayer.getNextMediaIndex();
     ```
     
 
@@ -513,36 +513,36 @@ Modify Your Activity Tag in your app’s `AndroidManifest.xml` file as shown bel
 
 - **Switch Player View**
     
-    When you want to change player view from one screen to another without interrupting the video, You may use `apExoPlayer.switchPlayer()` method.
+    When you want to change player view from one screen to another without interrupting the video, You may use `apPlayer.switchPlayer()` method.
     
     *Kotlin Example:*
     
     ```kotlin
     // secondStyledPlayerView is your the new Player View.
-    apExoPlayer?.switchPlayer(secondStyledPlayerView)
+    apPlayer?.switchPlayer(secondStyledPlayerView)
     ```
     
     *JAVA Example:*
     
     ```java
     // secondStyledPlayerView is your the new Player View.
-    apExoPlayer.switchPlayer(secondStyledPlayerView);
+    apPlayer.switchPlayer(secondStyledPlayerView);
     ```
     
 - **Switch back to Original Player**
     
-    When you switched your player using `switchPlayer` method and want to switch back to original player, You can use `apExoPlayer.placeOriginalPlayer()` method.
+    When you switched your player using `switchPlayer` method and want to switch back to original player, You can use `apPlayer.placeOriginalPlayer()` method.
     
     *Kotlin Example:*
     
     ```kotlin
-    apExoPlayer?.placeOriginalPlayer()
+    apPlayer?.placeOriginalPlayer()
     ```
     
     *JAVA Example:*
     
     ```java
-    apExoPlayer.placeOriginalPlayer();
+    apPlayer.placeOriginalPlayer();
     ```
     
 
@@ -550,7 +550,7 @@ Modify Your Activity Tag in your app’s `AndroidManifest.xml` file as shown bel
 
 # Generate VAST Tag for custom Players.
 
-When you are using an custom video player and integrating **ApExoPlayer** isn’t possible, you can use Ap Mobile SDK’s `generateVastTag()` method. This generate VAST Tag for your player in real time. 
+When you are using an custom video player and integrating **ApPlayer** isn’t possible, you can use Ap Mobile SDK’s `generateVastTag()` method. This generate VAST Tag for your player in real time. 
 
 Example: 
 

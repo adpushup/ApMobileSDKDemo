@@ -5,13 +5,13 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.adpushup.apmobilesdk.ApMobileSdk
-import com.adpushup.apmobilesdk.video.ApExoPlayer
+import com.adpushup.apmobilesdk.video.ApPlayer
 import com.adpushup.example.instreamad.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private var apPlayer: ApExoPlayer? = null
+    private var apPlayer: ApPlayer? = null
     private val videoUrl: Uri = Uri.parse("https://storage.googleapis.com/gvabox/media/samples/stock.mp4")
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         val playerView = binding.player
 
         // Creating Video Player (ApExoPlayer) with playerView.
-        apPlayer = ApExoPlayer(getString(R.string.ad_placement_id), playerView)
+        apPlayer = ApPlayer(getString(R.string.ad_placement_id), playerView)
         apPlayer?.init(this, videoUrl)
 
         // Adding Full Screen Button. Skip this step if you didn't want to add full screen mode button.

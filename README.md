@@ -2,7 +2,7 @@
 
 # **Get started**
 
-**Release version:  1.4.0 | Release date: 25.07.2023**
+**Release version:  1.5.1 | Release date: 21.11.2023**
 
 Follow this guide to get started with Ap Mobile SDK.
 
@@ -29,7 +29,7 @@ To prepare your app, complete the steps in the following sections.
 - Make sure that your app's build file uses the following values:
     - A `minSdkVersion` of `21` or higher
     - A `compileSdkVersion` of `33` or higher
-- Requires java 8 or higher
+- Requires java 17 or higher
 - **(Important)** Get the following IDs from AdPushup:
     - **Ad Manager App Id**: For Android Manifest File.
     - **Ap App Id**: Used in initializing Ap Mobile SDK.
@@ -63,8 +63,8 @@ To prepare your app, complete the steps in the following sections.
     
     ```groovy
     dependencies {
-      implementation 'com.adpushup:apmobilesdk:1.4.0'
-      implementation 'com.google.android.gms:play-services-ads:22.2.0'
+      implementation 'com.adpushup:apmobilesdk:1.5.1'
+      implementation 'com.google.android.gms:play-services-ads:22.5.0'
     }
     ```
     
