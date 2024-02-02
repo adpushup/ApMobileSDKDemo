@@ -26,13 +26,13 @@ Before using **ApPlayer**, Add the dependencies for the **Media3 Exo Player** to
 ```groovy
 dependencies {
 	// Ap Mobile SDK + Google Ads SDK
-  implementation 'com.adpushup:apmobilesdk:1.5.0'
-  implementation 'com.google.android.gms:play-services-ads:22.5.0'
+  implementation 'com.adpushup:apmobilesdk:1.6.5'
+  implementation 'com.google.android.gms:play-services-ads:22.6.0'
 
   // Media3 Exo Player
-  implementation 'androidx.media3:media3-exoplayer:1.2.0'
-  implementation 'androidx.media3:media3-ui:1.2.0'
-  implementation 'androidx.media3:media3-exoplayer-hls:1.2.0'
+  implementation 'androidx.media3:media3-exoplayer:1.2.1'
+  implementation 'androidx.media3:media3-ui:1.2.1'
+  implementation 'androidx.media3:media3-exoplayer-hls:1.2.1'
 }
 ```
 

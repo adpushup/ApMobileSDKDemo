@@ -15,12 +15,6 @@ class MyApp: Application(), Application.ActivityLifecycleCallbacks, LifecycleEve
     private lateinit var apAppOpen: ApAppOpen
     private var currentActivity: Activity? = null
 
-    override fun attachBaseContext(base: Context) {
-        super.attachBaseContext(base)
-        // Initialising Ap Mobile SDK Error Detection Module.
-        ApMobileSdk.initACRA(this)
-    }
-
     override fun onCreate() {
         super.onCreate()
         registerActivityLifecycleCallbacks(this)

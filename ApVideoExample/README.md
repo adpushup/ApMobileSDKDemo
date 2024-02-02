@@ -3,7 +3,7 @@
 ApVideo is a special video player that don’t need any content. It plays content from AdPushup’s Video Lib. It can be placed in your app even when your app doesn’t have any video content. It plays video ads along with its own content that increases overall revenue.
 
 To integrate ApVideo into your app, You can use **ApVideo** of **ApMobileSDK**.
-It uses **ApExoPlayer** internally for best performance.
+It uses **ApPlayer** internally for best performance.
 
 You can use our demo app as a reference project.
 
@@ -21,13 +21,13 @@ Before using **ApVideo**, Add the dependencies for the **Exo Player** to your mo
 ```groovy
 dependencies {
 	// Ap Mobile SDK + Google Ads SDK
-  implementation 'com.adpushup:apmobilesdk:1.5.1'
-  implementation 'com.google.android.gms:play-services-ads:22.5.0'
+  implementation 'com.adpushup:apmobilesdk:1.6.5'
+  implementation 'com.google.android.gms:play-services-ads:22.6.0'
 
   // Media3 Exo Player
-  implementation 'androidx.media3:media3-exoplayer:1.2.0'
-  implementation 'androidx.media3:media3-ui:1.2.0'
-  implementation 'androidx.media3:media3-exoplayer-hls:1.2.0'
+  implementation 'androidx.media3:media3-exoplayer:1.2.1'
+  implementation 'androidx.media3:media3-ui:1.2.1'
+  implementation 'androidx.media3:media3-exoplayer-hls:1.2.1'
 }
 ```
 

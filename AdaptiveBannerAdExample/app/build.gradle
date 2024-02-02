@@ -11,8 +11,8 @@ android {
         applicationId "com.adpushup.example.adaptivebanneradexample"
         minSdk 21
         targetSdk 34
-        versionCode 151
-        versionName "1.5.1"
+        versionCode 165
+        versionName "1.6.5"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -37,12 +37,12 @@ android {
 
 dependencies {
     // Ap Mobile SDK + Google Ads SDK
-    implementation 'com.adpushup:apmobilesdk:1.5.1'
-    implementation 'com.google.android.gms:play-services-ads:22.5.0'
+    implementation 'com.adpushup:apmobilesdk:1.6.5'
+    implementation 'com.google.android.gms:play-services-ads:22.6.0'
 
     implementation 'androidx.core:core-ktx:1.12.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.10.0'
+    implementation 'com.google.android.material:material:1.11.0'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
