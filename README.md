@@ -2,7 +2,7 @@
 
 # **Get started**
 
-**Release version:  1.5.1 | Release date: 21.11.2023**
+**Release version:  1.6.5 | Release date: 02.02.2024**
 
 Follow this guide to get started with Ap Mobile SDK.
 
@@ -28,7 +28,7 @@ To prepare your app, complete the steps in the following sections.
 - Use Android Studio Dolphin (2021.3.1) or higher
 - Make sure that your app's build file uses the following values:
     - A `minSdkVersion` of `21` or higher
-    - A `compileSdkVersion` of `33` or higher
+    - A `compileSdkVersion` of `34` or higher
 - Requires java 17 or higher
 - **(Important)** Get the following IDs from AdPushup:
     - **Ad Manager App Id**: For Android Manifest File.
@@ -63,8 +63,8 @@ To prepare your app, complete the steps in the following sections.
     
     ```groovy
     dependencies {
-      implementation 'com.adpushup:apmobilesdk:1.5.1'
-      implementation 'com.google.android.gms:play-services-ads:22.5.0'
+      implementation 'com.adpushup:apmobilesdk:1.6.5'
+      implementation 'com.google.android.gms:play-services-ads:22.6.0'
     }
     ```
     
@@ -80,21 +80,6 @@ To prepare your app, complete the steps in the following sections.
         </application>
     </manifest>
     ```
-    
-4. Change your app’s Application Class with ApApplication. 
-    
-    ```xml
-    <manifest>
-        <application
-            android:name="com.adpushup.apmobilesdk.ApApplication" >
-            ...
-        </application>
-    </manifest>
-    ```
-    
-    Refer [Here](ApApplicationGuide.md) for more information:
-    
-    [About Ap Application](ApApplicationGuide.md)
     
 
 ---
@@ -140,6 +125,7 @@ public class MainActivity extends AppCompatActivity {
 }
 ```
 
+
 ---
 
 # Implementing ads to your app
@@ -161,3 +147,51 @@ public class MainActivity extends AppCompatActivity {
 [ApVideo](ApVideoExample/README.md)
 
 [App Open Ads](AppOpenAdExample/Readme.md)
+
+---
+# Debugging Tools
+
+Ap SDK provides ```ApMobileSdk.enableDebugging()``` function to enable debugging logs for the SDK. Once enabled, SDK will print debug Logs in your Android Studio's Logcat.
+
+Its advisable to only enable debugging in Test environments. You must disable debugging after completing the tests.
+
+Here's an example of how to call the `enableDebugging()` method in an Activity:
+
+*Kotlin Example:*
+
+```kotlin
+import com.adpushup.apmobilesdk.ApMobileSdk
+
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        // Enable Debugging
+        ApMobileSdk.enableDebugging(this, true)
+
+		// Initialise SDK		
+	    ApMobileSdk.init(this, "apAppId")
+    }
+}
+```
+
+*JAVA Example:*
+
+```java
+import com.adpushup.apmobilesdk.ApMobileSdk;
+
+public class MainActivity extends AppCompatActivity {
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        // Enable Debugging
+        ApMobileSdk.enableDebugging(this, true);
+
+		// Initialise SDK		
+        ApMobileSdk.init(this, "apAppId");
+    }
+}
+```

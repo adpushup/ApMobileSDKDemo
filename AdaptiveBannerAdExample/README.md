@@ -20,7 +20,7 @@ To implement Adaptive Banner Ads in your app, follow these steps:
     ```xml
     <FrameLayout
         android:id="@+id/adFrame"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     ```
     
@@ -61,7 +61,7 @@ To implement Adaptive Banner Ads in your app, follow these steps:
 
     Here, the `adSize` is the size of the banner ad that you calculated at runtime.
     
-4. Destroy the ad in the `onDestroy()` function of your activity.
+4. **(Important)** Destroy the ad in the `onDestroy()` function of your activity.
     
     *Kotlin Example:*
     

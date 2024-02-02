@@ -40,12 +40,6 @@ You can implement Ap App Open Ads in two ways:
         private lateinit var apAppOpen: ApAppOpen
         private var currentActivity: Activity? = null
     
-        override fun attachBaseContext(base: Context) {
-            super.attachBaseContext(base)
-            // Initialising Ap Mobile SDK Error Detection Module.
-            ApMobileSdk.initACRA(this)
-        }
-    
         override fun onCreate() {
             super.onCreate()
             registerActivityLifecycleCallbacks(this)
@@ -106,13 +100,6 @@ You can implement Ap App Open Ads in two ways:
     public class MyApp extends Application implements Application.ActivityLifecycleCallbacks, LifecycleEventObserver {
         private ApAppOpen apAppOpen;
         private Activity currentActivity;
-    
-        @Override
-        protected void attachBaseContext(Context base) {
-            super.attachBaseContext(base);
-            // Initialising Ap Mobile SDK Error Detection Module.
-            ApMobileSdk.initACRA(this);
-        }
     
         @Override
         public void onCreate() {
@@ -193,12 +180,6 @@ To implement App Open Ads in your app, follow these steps:
     /** Application class that initializes, loads and shows ads when activities change states. */
     
     class MyApp: Application() {
-        override fun attachBaseContext(base: Context) {
-            super.attachBaseContext(base)
-            // Initialising Ap Mobile SDK Error Detection Module.
-            ApMobileSdk.initACRA(this)
-        }
-    
         override fun onCreate() {
             super.onCreate()
             // Initialising Ap Mobile SDK.
@@ -212,13 +193,6 @@ To implement App Open Ads in your app, follow these steps:
     ```java
     /** Application class that initializes, loads and shows ads when activities change states. */
     public class MyApp extends Application {
-        @Override
-        protected void attachBaseContext(Context base) {
-            super.attachBaseContext(base);
-            // Initialising Ap Mobile SDK Error Detection Module.
-            ApMobileSdk.initACRA(this);
-        }
-    
         @Override
         public void onCreate() {
             super.onCreate();

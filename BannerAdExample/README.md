@@ -20,7 +20,7 @@ To implement Banner Ads in your app, follow these steps:
     ```xml
     <FrameLayout
         android:id="@+id/adFrame"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     ```
     
@@ -59,7 +59,7 @@ To implement Banner Ads in your app, follow these steps:
     apBanner.loadAd(context, new ApBannerListener() {});
     ```
     
-4. Destroy the ad in the `onDestroy()` function of your activity.
+4. **(Important)** Destroy the ad in the `onDestroy()` function of your activity.
     
     *Kotlin Example:*
     
