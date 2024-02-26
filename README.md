@@ -2,7 +2,7 @@
 
 # **Get started**
 
-**Release version:  1.6.5 | Release date: 02.02.2024**
+**Release version:  1.6.6 | Release date: 26.02.2024**
 
 Follow this guide to get started with Ap Mobile SDK.
 
@@ -63,7 +63,7 @@ To prepare your app, complete the steps in the following sections.
     
     ```groovy
     dependencies {
-      implementation 'com.adpushup:apmobilesdk:1.6.5'
+      implementation 'com.adpushup:apmobilesdk:1.6.6'
       implementation 'com.google.android.gms:play-services-ads:22.6.0'
     }
     ```
@@ -102,7 +102,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 				
-	// apAppId is your app ID in AdPushUp. It will be provided to you by AdPushup.
+	    // apAppId is your app ID in AdPushUp. It will be provided to you by AdPushup.
         ApMobileSdk.init(this, "apAppId")
     }
 }
