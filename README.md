@@ -2,7 +2,7 @@
 
 # **Get started**
 
-**Release version:  1.6.6 | Release date: 26.02.2024**
+**Release version: 1.7.1 | Release date: 17.04.2024**
 
 Follow this guide to get started with Ap Mobile SDK.
 
@@ -63,8 +63,8 @@ To prepare your app, complete the steps in the following sections.
     
     ```groovy
     dependencies {
-      implementation 'com.adpushup:apmobilesdk:1.6.6'
-      implementation 'com.google.android.gms:play-services-ads:22.6.0'
+      implementation 'com.adpushup:apmobilesdk:1.7.1'
+      implementation 'com.google.android.gms:play-services-ads:23.0.0'
     }
     ```
     
@@ -124,7 +124,40 @@ public class MainActivity extends AppCompatActivity {
     }
 }
 ```
+### **(Important) Additinal Steps - For Proper SDK Functioning**
 
+Ap Mobile Sdk may try to preload ads when app resumes from background or user navigates between multiple screens. To keep ads preloaded so that they can be shown instantly, you must call `ApMobileSdk.resume()` method.
+
+Here's an example of how to call the `resume()` method in an Activity:
+
+*Kotlin Example:*
+
+```kotlin
+import com.adpushup.apmobilesdk.ApMobileSdk
+
+class MainActivity : AppCompatActivity() {
+    override fun onResume() {
+        super.onResume()
+        // Inform Sdk about Activty's Resume Event
+        ApMobileSdk.resume(this)
+    }
+}
+```
+
+*JAVA Example:*
+
+```java
+import com.adpushup.apmobilesdk.ApMobileSdk;
+
+public class MainActivity extends AppCompatActivity {
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // Inform Sdk about Activty's Resume Event
+        ApMobileSdk.resume(this);
+    }
+}
+```
 
 ---
 

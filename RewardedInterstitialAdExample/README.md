@@ -99,3 +99,6 @@ ApRewardedInterstitialListener {
 	override fun onWarning(code: Int, message: String?) {}
 }
 ```
+
+## Additional Tips:
+Ap Mobile SDK supports controlling full-screen ad behaviour via Ad Caping like attempt, time and quantity remotely in real-time. If you have any specific requirements, reach out to the AdPushup Team.

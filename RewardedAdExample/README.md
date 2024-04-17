@@ -20,7 +20,7 @@ To implement Rewarded Ads in your app, follow these steps:
     *Kotlin Example:*
     
     ```kotlin
-    if(ApMobileSdk.isRewardedAdReady("AP_PLACEMENT_ID")){
+    if(ApMobileSdk.isRewardedAdReady(context, "AP_PLACEMENT_ID")){
     	// Ad is available. Ask user to view an ad for some reward.
     	...
     }
@@ -29,7 +29,7 @@ To implement Rewarded Ads in your app, follow these steps:
     *JAVA Example:*
     
     ```java
-    if(ApMobileSdk.isRewardedAdReady("AP_PLACEMENT_ID")){
+    if(ApMobileSdk.isRewardedAdReady(context, "AP_PLACEMENT_ID")){
     	// Ad is available. Ask user to view an ad for some reward.
     	...
     }
@@ -133,3 +133,5 @@ ApRewardedListener {
 	override fun onWarning(code: Int, message: String?) {}
 }
 ```
+## Additional Tips:
+Ap Mobile SDK supports controlling full-screen ad behaviour via Ad Caping like attempt, time and quantity remotely in real-time. If you have any specific requirements, reach out to the AdPushup Team.
