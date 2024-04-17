@@ -37,6 +37,11 @@ class MainActivity : AppCompatActivity() {
         if (Build.VERSION.SDK_INT <= 23) {
             apVideo?.start(this)
         }
+
+        // Resume the SDK on Activity Resume. This will ensure the SDK preloads
+        // the ads and is ready to show ads when required.
+        ApMobileSdk.resume(this)
+
     }
 
     override fun onPause() {

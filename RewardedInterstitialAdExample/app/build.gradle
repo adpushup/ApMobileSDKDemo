@@ -11,8 +11,8 @@ android {
         applicationId "com.adpushup.example.rewardedinterstitialadexample"
         minSdk 21
         targetSdk 34
-        versionCode 166
-        versionName "1.6.6"
+        versionCode 171
+        versionName "1.7.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -37,8 +37,8 @@ android {
 
 dependencies {
     // Ap Mobile SDK + Google Ads SDK
-    implementation 'com.adpushup:apmobilesdk:1.6.6'
-    implementation 'com.google.android.gms:play-services-ads:22.6.0'
+    implementation 'com.adpushup:apmobilesdk:1.7.1'
+    implementation 'com.google.android.gms:play-services-ads:23.0.0'
 
     implementation 'androidx.core:core-ktx:1.12.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'

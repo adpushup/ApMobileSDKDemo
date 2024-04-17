@@ -1,12 +1,18 @@
 package com.adpushup.example.rewardedinterstitialadexample
 
+import android.app.Activity
+import android.content.Context
+import android.os.Build
 import android.os.Bundle
+import android.util.DisplayMetrics
 import android.util.Log
+import android.view.WindowMetrics
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.adpushup.apmobilesdk.ApMobileSdk
 import com.adpushup.apmobilesdk.interfaces.ApRewardedInterstitialListener
 import com.adpushup.example.rewardedinterstitialadexample.databinding.ActivityMainBinding
+import kotlin.math.roundToInt
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,7 +30,7 @@ class MainActivity : AppCompatActivity() {
             // NOTE: For Ad Optimisations, ApMobileSDK will will only show the ad at very specific time.
             // So, You need to check if the ad is ready.
             // It is safe to call ApMobileSdk.isRewardedInterstitialAdReady() multiple times.
-            if(ApMobileSdk.isRewardedInterstitialAdReady(getString(R.string.ad_placement_id))){
+            if(ApMobileSdk.isRewardedInterstitialAdReady(this@MainActivity, getString(R.string.ad_placement_id))){
                 // We need to show a timer dialog before showing the rewarded interstitial ads.
                 val dialog = AdDialogFragment.newInstance(200, "coins")
                 dialog.setAdDialogInteractionListener(
@@ -54,5 +60,12 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this@MainActivity, "Ad Not Ready Yet", Toast.LENGTH_SHORT).show()
             }
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        // Resume the SDK on Activity Resume. This will ensure the SDK preloads
+        // the ads and is ready to show ads when required.
+        ApMobileSdk.resume(this)
     }
 }
