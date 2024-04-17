@@ -31,6 +31,8 @@ class MyApp: Application(), Application.ActivityLifecycleCallbacks, LifecycleEve
             currentActivity?.let {
                 apAppOpen.showAd(it, getString(R.string.ad_placement_id)) {}
             }
+        } else if(event == Lifecycle.Event.ON_RESUME) {
+            ApMobileSdk.resume(this)
         }
     }
 

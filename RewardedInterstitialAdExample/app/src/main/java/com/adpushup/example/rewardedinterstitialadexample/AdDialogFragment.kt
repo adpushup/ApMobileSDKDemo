@@ -1,14 +1,18 @@
 package com.adpushup.example.rewardedinterstitialadexample
 
 import android.app.Dialog
+import android.content.Context
 import android.content.DialogInterface
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.util.DisplayMetrics
 import android.util.Log
-import android.widget.FrameLayout
+import android.view.Gravity
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
+import androidx.core.view.setPadding
 import androidx.fragment.app.DialogFragment
+import kotlin.math.roundToInt
 
 class AdDialogFragment: DialogFragment() {
     /** Number of seconds to count down before showing ads. */
@@ -35,7 +39,9 @@ class AdDialogFragment: DialogFragment() {
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val view = TextView(this.requireContext())
-        view.setPadding(16, 16, 16, 16)
+        val pixels = dpToPx(this.requireActivity(), 16)
+        view.setPadding(pixels)
+        view.gravity = Gravity.CENTER
 
         // Inflate and set the layout for the dialog
         // Pass null as the parent view because its going in the dialog layout
@@ -136,5 +142,17 @@ class AdDialogFragment: DialogFragment() {
             fragment.arguments = args
             return fragment
         }
+    }
+
+    /**
+     * Converts dp to pixel.
+     *
+     * @param context The context of the app.
+     * @param dp The number of dp to convert to pixel.
+     * @return The number of pixels.
+     */
+    private fun dpToPx(context: Context, dp: Int): Int {
+        val displayMetrics: DisplayMetrics = context.resources.displayMetrics
+        return (dp * (displayMetrics.xdpi / DisplayMetrics.DENSITY_DEFAULT)).roundToInt()
     }
 }

@@ -18,6 +18,8 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        ApMobileSdk.enableDebugging(this, true)
+
         // Initialising Ap Mobile SDK.
         ApMobileSdk.init(this, getString(R.string.ap_app_id))
 
@@ -25,7 +27,7 @@ class MainActivity : AppCompatActivity() {
             // NOTE: For Ad Optimisations, ApMobileSDK will will only show the ad at very specific time.
             // So, You need to check if the ad is ready.
             // It is safe to call ApMobileSdk.isRewardedAdReady() multiple times.
-            if(ApMobileSdk.isRewardedAdReady(getString(R.string.ad_placement_id))){
+            if(ApMobileSdk.isRewardedAdReady(this, getString(R.string.ad_placement_id))){
                 // Ask User if he want to watch an Rewarded Ad.
                 MaterialAlertDialogBuilder(this@MainActivity)
                     .setTitle("Ad Available")
@@ -58,5 +60,12 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this@MainActivity, "Ad Not Ready Yet", Toast.LENGTH_SHORT).show()
             }
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        // Resume the SDK on Activity Resume. This will ensure the SDK preloads
+        // the ads and is ready to show ads when required.
+        ApMobileSdk.resume(this)
     }
 }

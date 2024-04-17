@@ -33,6 +33,13 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    override fun onResume() {
+        super.onResume()
+        // Resume the SDK on Activity Resume. This will ensure the SDK preloads
+        // the ads and is ready to show ads when required.
+        ApMobileSdk.resume(this)
+    }
+
     override fun onDestroy() {
         // Destroy the Banner Ad
         apBanner.destroy()
