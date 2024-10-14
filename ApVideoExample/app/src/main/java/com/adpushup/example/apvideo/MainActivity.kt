@@ -3,7 +3,7 @@ package com.adpushup.example.apvideo
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.adpushup.apmobilesdk.ApMobileSdk
+import com.adpushup.apmobilesdk.video.ApSdkLite
 import com.adpushup.apmobilesdk.video.ApVideo
 import com.adpushup.example.apvideo.databinding.ActivityMainBinding
 
@@ -17,8 +17,10 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Initialising Ap Mobile SDK.
-        ApMobileSdk.init(this, getString(R.string.ap_app_id))
+        // Initialising Ap Mobile SDK. - If In-stream Video Ads are used with other ad formats.
+//        ApMobileSdk.init(this, getString(R.string.ap_app_id))
+        // Initialising Ap SDK Lite - Only if other Ad Formats are not used.
+        ApSdkLite.initialise(this, getString(R.string.ap_app_id))
 
         // Creating ApVideo with playerView.
         val playerView = binding.player
@@ -37,11 +39,6 @@ class MainActivity : AppCompatActivity() {
         if (Build.VERSION.SDK_INT <= 23) {
             apVideo?.start(this)
         }
-
-        // Resume the SDK on Activity Resume. This will ensure the SDK preloads
-        // the ads and is ready to show ads when required.
-        ApMobileSdk.resume(this)
-
     }
 
     override fun onPause() {

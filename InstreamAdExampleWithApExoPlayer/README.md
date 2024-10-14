@@ -26,16 +26,19 @@ Before using **ApPlayer**, Add the dependencies for the **Media3 Exo Player** to
 ```groovy
 dependencies {
 	// Ap Mobile SDK + Ap Video + Google Ads SDK (If you are using Video Ads Only, you may skip ApMobileSdk Integration. Contact AdPushup for more into.)
-  implementation 'com.adpushup:apmobilesdk:1.8.5'
-  implementation 'com.adpushup.apmobilesdk:video:1.8.5'
-  implementation 'com.google.android.gms:play-services-ads:23.2.0'
+  implementation 'com.adpushup:apmobilesdk:1.9.0'
+  implementation 'com.adpushup.apmobilesdk:video:1.9.0'
+  implementation 'com.google.android.gms:play-services-ads:23.4.0'
 
   // Media3 Exo Player
-  implementation 'androidx.media3:media3-exoplayer:1.4.0'
-  implementation 'androidx.media3:media3-ui:1.4.0'
-  implementation 'androidx.media3:media3-exoplayer-hls:1.4.0'
+  implementation 'androidx.media3:media3-exoplayer:1.4.1'
+  implementation 'androidx.media3:media3-ui:1.4.1'
+  implementation 'androidx.media3:media3-exoplayer-hls:1.4.1'
 }
 ```
+
+Note: If you only use Instream Video Ads in your app, you can skip adding `apmobilesdk` and `play-services-ads` dependencies. Refer to the Example App or contact the Adpushup Team for more info.
+
 
 ## Implementation Guide:
 
@@ -71,7 +74,7 @@ To implement **ApPlayer** in your app, follow these steps:
         val uri = Uri.parse("https://YOUR_VIDEO_URL")
            
         apPlayer = ApPlayer("AP_PLACEMENT_ID", playerView)
-        apPlayer!!.init(this, uri)
+        apPlayer?.init(this, uri)
          
     		...   
     }
