@@ -3,4 +3,5 @@
     <string name="gam_app_id">ca-app-pub-3940256099942544~3347511713</string>
     <string name="ap_app_id">test-example-video</string>
     <string name="ad_placement_id">testVideoPlacementId</string>
+    <string name="tip">Tip: Sometimes ads might not inserted if the player is created before SDK init is complete. Please restart the app to see the ads. You will start seeing ads in these cases after the second session.</string>
 </resources>

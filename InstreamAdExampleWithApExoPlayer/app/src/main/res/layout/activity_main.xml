@@ -9,6 +9,14 @@
         android:id="@+id/player"
         android:background="@color/black"
         android:layout_width="match_parent"
-        android:layout_height="360dp"/>
+        android:layout_height="240dp"/>
+
+    <TextView
+        android:text="@string/tip"
+        android:layout_margin="18dp"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
 </RelativeLayout>
