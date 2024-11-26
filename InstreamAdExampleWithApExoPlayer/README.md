@@ -26,9 +26,9 @@ Before using **ApPlayer**, Add the dependencies for the **Media3 Exo Player** to
 ```groovy
 dependencies {
 	// Ap Mobile SDK + Ap Video + Google Ads SDK (If you are using Video Ads Only, you may skip ApMobileSdk Integration. Contact AdPushup for more into.)
-  implementation 'com.adpushup:apmobilesdk:1.9.0'
-  implementation 'com.adpushup.apmobilesdk:video:1.9.0'
-  implementation 'com.google.android.gms:play-services-ads:23.4.0'
+  implementation 'com.adpushup:apmobilesdk:1.9.5'
+  implementation 'com.adpushup.apmobilesdk:video:1.9.3'
+  implementation 'com.google.android.gms:play-services-ads:23.2.0'
 
   // Media3 Exo Player
   implementation 'androidx.media3:media3-exoplayer:1.4.1'

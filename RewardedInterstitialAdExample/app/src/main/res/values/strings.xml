@@ -4,4 +4,5 @@
     <string name="ap_app_id">test-example-rewarded-interstitial</string>
     <string name="ad_placement_id">testRewardedInterstitialPlacementId</string>
     <string name="show_ad">Show Ad</string>
+    <string name="note">Feel free to press the above button multiple times. The ad will be shown after every 5–10 seconds depending on the configuration from AdPushup Server.</string>
 </resources>

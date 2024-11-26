@@ -4,4 +4,6 @@
     <string name="ap_app_id">test-example-app-open</string>
     <string name="ad_placement_id">testAppOpenPlacementId</string>
     <string name="app_content">App Content</string>
+    <string name="note">Please switch to any other app and come back to this app to see the ad. You may need to repeat the process multiple times as ads load/reload at 5–10 second intervals depending on configuration from AdPushup Servers.</string>
+    <string name="fix">If you don\'t see the ad, please restart the app.</string>
 </resources>

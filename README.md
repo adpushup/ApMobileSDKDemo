@@ -2,7 +2,7 @@
 
 # **Get started**
 
-**Release version: 1.9.0 | Release date: 14.10.2024**
+**Release version: 1.9.5 | Release date: 26.11.2024**
 
 Follow this guide to get started with Ap Mobile SDK.
 
@@ -39,32 +39,37 @@ To prepare your app, complete the steps in the following sections.
 
 ## Configure your app
 
-1. In your project-level `build.gradle` file, including [Google's Maven repository](https://maven.google.com/web/index.html), [Maven central repository](https://search.maven.org/artifact), and [Jitpack.io repository](http://jitpack.io/) in both your `buildscript` and `allprojects` sections:
+1. In your Gradle settings file, include the [Google's Maven repository](https://maven.google.com/web/index.html), [Maven central repository](https://search.maven.org/artifact), and [Jitpack.io repository](http://jitpack.io/), normally `settings.gradle`:
     
     ```groovy
-    buildscript {
+    pluginManagement {
+        repositories {
+            google()
+            mavenCentral()
+            maven { url 'https://jitpack.io' }
+            gradlePluginPortal()
+        }
+    }
+
+    dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
         repositories {
             google()
             mavenCentral()
             maven { url 'https://jitpack.io' }
         }
     }
-    
-    allprojects {
-        repositories {
-            google()
-            mavenCentral()
-            maven { url 'https://jitpack.io' }
-        }
-    }
+
+    rootProject.name = "My Application"
+    include ':app'
     ```
     
 2. Add the dependencies for the **Ap Mobile SDK** and **Google Mobile Ads SDK** to your module's app-level [Gradle](https://gradle.org/) file, normally `app/build.gradle`:
     
     ```groovy
     dependencies {
-      implementation 'com.adpushup:apmobilesdk:1.9.0'
-      implementation 'com.google.android.gms:play-services-ads:23.4.0'
+      implementation 'com.adpushup:apmobilesdk:1.9.5'
+      implementation 'com.google.android.gms:play-services-ads:23.2.0'
     }
     ```
     

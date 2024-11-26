@@ -14,4 +14,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
+    <TextView
+        android:layout_below="@id/showAd"
+        android:text="@string/note"
+        android:layout_width="wrap_content"
+        android:layout_margin="18dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"/>
+
 </RelativeLayout>

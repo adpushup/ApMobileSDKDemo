@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         binding.showAd.setOnClickListener {
             // Show Ad.
             // NOTE: For Ad Optimisations, ApMobileSDK will will only show the ad at very specific time.
-            // So, It is safe to call this function at multiple events.
+            // So, It is safe to call this function at multiple events and multiple times.
             ApMobileSdk.showInterstitialAd(this, getString(R.string.ad_placement_id)) {
                 // You don't have to worry about ad events. After calling ApMobileSdk.showInterstitialAd(),
                 // resume your work here.

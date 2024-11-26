@@ -21,9 +21,8 @@ class MainActivity : AppCompatActivity() {
 
         // Initialising Ap Mobile SDK. - If In-stream Video Ads are used with other ad formats.
 //        ApMobileSdk.init(this, getString(R.string.ap_app_id))
-        // Initialising Ap SDK Lite - Only if other Ad Formats are not used.
+        // Initialising Ap SDK Lite - Only if NO OTHER AD FORMATS are not used.
         ApSdkLite.initialise(this, getString(R.string.ap_app_id))
-
 
         val playerView = binding.player
 
