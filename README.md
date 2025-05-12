@@ -68,7 +68,7 @@ To prepare your app, complete the steps in the following sections.
     
     ```groovy
     dependencies {
-      implementation 'com.adpushup:apmobilesdk:1.9.5'
+      implementation 'com.adpushup:apmobilesdk:2.0.2'
       implementation 'com.google.android.gms:play-services-ads:23.2.0'
     }
     ```

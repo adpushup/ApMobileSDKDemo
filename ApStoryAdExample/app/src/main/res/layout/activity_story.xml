@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StoryActivity">
+
+    <!-- Background image covering the whole screen -->
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitCenter"
+        android:contentDescription="@null" />
+
+    <!-- Stories progress view at the top -->
+    <FrameLayout
+        android:id="@+id/storiesContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="8dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp">
+        <jp.shts.android.storiesprogressview.StoriesProgressView
+            android:id="@+id/stories"
+            android:layout_width="match_parent"
+            android:layout_height="3dp" />
+    </FrameLayout>
+
+    <!-- User name displayed below the stories progress view -->
+    <TextView
+        android:id="@+id/tvUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/storiesContainer"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="10dp"
+        android:text="User Name"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp" />
+
+    <!-- Navigation controls overlaid on the image -->
+    <LinearLayout
+        android:id="@+id/navigationLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <!-- View to handle moving to the previous story -->
+        <FrameLayout
+            android:id="@+id/reverse"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_gravity="center">
+            <ImageButton
+                android:id="@+id/btnPrevious"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:scaleType="centerCrop"
+                android:contentDescription="button prev"
+                android:src="@drawable/ic_prev"
+                android:background="@null"
+                android:elevation="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_gravity="start|center" />
+        </FrameLayout>
+
+        <!-- View to handle moving to the next story -->
+        <FrameLayout
+            android:id="@+id/skip"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <ImageButton
+                android:id="@+id/btnNext"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:scaleType="centerCrop"
+                android:contentDescription="button next"
+                android:src="@drawable/ic_next"
+                android:elevation="8dp"
+                android:background="@null"
+                android:layout_marginEnd="8dp"
+                android:layout_gravity="end|center" />
+        </FrameLayout>
+    </LinearLayout>
+
+</RelativeLayout>

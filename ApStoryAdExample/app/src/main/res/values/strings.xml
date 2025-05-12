@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ApStoryAdExample</string>
+    <string name="ap_app_id">test-example-story</string>
+    <string name="gam_app_id">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="ad_placement_id">testStoryPlacementId</string>
+    <string name="text_main">The ApStory class allows developers to load and display Story/Reels/Shorts type Native ads seamlessly within various UI components such as RecyclerView, ViewPager2, and Jetpack Compose.</string>
+
+</resources>

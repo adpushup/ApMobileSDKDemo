@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="text_story">The story format disables Click to Action on the Ad’s Media View itself. While the Click To Dismiss Action and Ad’s Click-To-Action (CTA) to Swipe Up gesture can be handled by the developer</string>
+    <string name="text_main">The ApStory class allows developers to load and display Story/Reels/Shorts type Native ads seamlessly within various UI components such as RecyclerView, ViewPager2, and Jetpack Compose.</string>
+</resources>

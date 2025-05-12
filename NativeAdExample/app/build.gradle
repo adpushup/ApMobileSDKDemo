@@ -11,8 +11,8 @@ android {
         applicationId "com.adpushup.example.nativeadexample"
         minSdk 21
         targetSdk 34
-        versionCode 195
-        versionName "1.9.5"
+        versionCode 202
+        versionName "2.0.2"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -37,7 +37,7 @@ android {
 
 dependencies {
     // Ap Mobile SDK + Google Ads SDK
-    implementation 'com.adpushup:apmobilesdk:1.9.5'
+    implementation 'com.adpushup:apmobilesdk:2.0.2'
     implementation 'com.google.android.gms:play-services-ads:23.2.0'
 
     implementation 'androidx.core:core-ktx:1.13.1'
