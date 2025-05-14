@@ -17,7 +17,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import com.adpushup.apmobilesdk.ads.ApStory
 import com.adpushup.apmobilesdk.interfaces.ApStoryListener
-import com.dev.apstoryadexample.databinding.ActivityStoryBinding
+import com.dev.apstoryadexample.databinding.ActivityReelBinding
 import jp.shts.android.storiesprogressview.StoriesProgressView
 import jp.shts.android.storiesprogressview.StoriesProgressView.StoriesListener
 import kotlinx.coroutines.Job
@@ -25,15 +25,14 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 /**
- * StoryActivity demonstrates a full-screen, swipeable "stories" UI,
- * powered by the open-source SHTS StoriesProgressView library:
+ * ReelActivity powered by the open-source SHTS StoriesProgressView library:
  * https://github.com/shts/StoriesProgressView
  *
  * It also integrates AdPushUp ApStory native ads every two users,
- * giving developers an example of how to insert ads into story flows.
+ * giving developers an example of how to insert ads into reel flows.
  */
-class StoryActivity : AppCompatActivity(), StoriesListener {
-    private lateinit var binding: ActivityStoryBinding
+class ReelActivity : AppCompatActivity(), StoriesListener {
+    private lateinit var binding: ActivityReelBinding
     private var storiesProgressView: StoriesProgressView? = null
     private var image: ImageView? = null
     private var tvUserName: TextView? = null
@@ -48,7 +47,7 @@ class StoryActivity : AppCompatActivity(), StoriesListener {
     @Suppress("DEPRECATION")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityStoryBinding.inflate(layoutInflater)
+        binding = ActivityReelBinding.inflate(layoutInflater)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             window.decorView.windowInsetsController?.hide(WindowInsets.Type.statusBars())
         } else {
@@ -88,7 +87,7 @@ class StoryActivity : AppCompatActivity(), StoriesListener {
         apStory = ApStory(getString(R.string.ad_placement_id))
 
         // Begin loading the ad into memory
-        apStory.loadAd(this@StoryActivity, object : ApStoryListener {
+        apStory.loadAd(this@ReelActivity, object : ApStoryListener {
             override fun onComplete(success: Boolean) {
                 if (success) {
                     Log.d(TAG, "Ad loaded successfully")
@@ -108,15 +107,8 @@ class StoryActivity : AppCompatActivity(), StoriesListener {
         // Obtain the root FrameLayout of the activity to place the ad overlay
         val root = findViewById<FrameLayout>(android.R.id.content)
 
-        // This AdView will get the ApStory ad in the 'Story' format
-        currentAdView = apStory.getAd(
-            this,
-            isSwipeUpGestureEnabled = true,
-            isClickDismissEnabled = true
-        ) {
-            Log.d(TAG, "Ad dismissed via gesture/click")
-            skipAd()
-        }
+        // This AdView will get the ApStory ad in the 'Reel' format
+        currentAdView = apStory.getAd(this)
 
         // We can now just add the adView with the ApStory Ad to any layout we want to display it in
         if (currentAdView != null && root != null) {
@@ -214,6 +206,6 @@ class StoryActivity : AppCompatActivity(), StoriesListener {
     companion object {
         private var pressTime: Long = 0L
         private var limit: Long = 500L
-        private var TAG: String  = "StoryActivity"
+        private var TAG: String  = "ReelActivity"
     }
 }

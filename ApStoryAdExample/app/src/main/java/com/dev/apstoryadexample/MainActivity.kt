@@ -24,14 +24,10 @@ class MainActivity : AppCompatActivity() {
         // Initialising Ap Mobile SDK.
         ApMobileSdk.init(this, getString(R.string.ap_app_id))
         binding.btnStory.setOnClickListener {
-            startActivity(Intent(this@MainActivity, StoryActivity::class.java).apply {
-                putExtra("STORY_TYPE", ApStoryType.AP_STORY)
-            })
+            startActivity(Intent(this@MainActivity, StoryActivity::class.java))
         }
         binding.btnReel.setOnClickListener {
-            startActivity(Intent(this@MainActivity, StoryActivity::class.java).apply {
-                putExtra("STORY_TYPE", ApStoryType.AP_REEL)
-            })
+            startActivity(Intent(this@MainActivity, ReelActivity::class.java))
         }
     }
 }

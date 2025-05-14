@@ -166,27 +166,25 @@ public class MainActivity extends AppCompatActivity {
 
 ---
 
+
 # Implementing ads to your app
 
-[Banner Ads](BannerAdExample/README.md)
-
-[Adaptive Banner Ads](AdaptiveBannerAdExample/README.md)
-
-[Interstitial Ads](InterstitialAdExample/README.md)
-
-[Rewarded Ads](RewardedAdExample/README.md)
-
-[Rewarded Interstitial Ads](RewardedInterstitialAdExample/README.md)
-
-[Native Ads](NativeAdExample/README.md)
-
-[In-Stream Ads](InstreamAdExampleWithApExoPlayer/README.md)
-
-[ApVideo](ApVideoExample/README.md)
-
-[App Open Ads](AppOpenAdExample/Readme.md)
+| Ad Format                                           | Description                                                                  | Example Image                                     |
+|-----------------------------------------------------|------------------------------------------------------------------------------|---------------------------------------------------|
+| [Banner Ads](BannerAdExample/README.md)             | A standard rectangular ad displayed at the top or bottom of screen.          | ![Banner Ads](images/BannerAdExample.jpg)         |
+| [Adaptive Banner Ads](AdaptiveBannerAdExample/README.md) | A banner that dynamically adjusts its size to fit different screens.         | ![Adaptive Banner](images/AdaptiveBannerAdExample.jpg) |
+| [Interstitial Ads](InterstitialAdExample/README.md) | Full-screen ads shown at natural transition points in your app.              | ![Interstitial](images/InterstitialAdExample.jpg) |
+| [Rewarded Ads](RewardedAdExample/README.md)         | Video ads that reward users with in-app items or currency for watching.      | ![Rewarded Ads](images/RewardedAdExample.jpg)     |
+| [Rewarded Interstitial Ads](RewardedInterstitialAdExample/README.md) | Combines interstitial and rewarded ads into a single full-screen experience. | ![Rewarded Interstitial](images/RewardedInterstitialAdExample.jpg) |
+| [Native Ads](NativeAdExample/README.md)             | Ads that blend seamlessly with your app’s UI for a non-disruptive feel.      | ![Native Ads](images/NativeAdExample.jpg)         |
+| [In-Stream Ads](InstreamAdExampleWithApExoPlayer/README.md) | Video ads served within your app’s video content stream.                     | ![In-Stream Ads](images/InstreamAdExampleWithApExoPlayer.jpg) |
+| [ApVideo](ApVideoExample/README.md)                 | Standalone video ad unit optimized for engaging video creatives.             | ![ApVideo](images/ApVideoExample.jpg)             |
+| [App Open Ads](AppOpenAdExample/README.md)          | Ads displayed when users launch or return to your app.                       | ![App Open Ads](images/AppOpenAdExample.jpg)      |
+| [ApStory Ads](ApStoryAdExample/README.md)             | Native story-format ads integrated into your app’s story UI flows.           | ![ApStory Ads](images/ApStoryAdExample.jpg)         |
+| [Ap Mediation SDK](mediation/README.md)         | A unified interface to integrate multiple ad networks via Ap mediation.      | —                         |
 
 ---
+
 # Debugging Tools
 
 Ap SDK provides ```ApMobileSdk.enableDebugging()``` function to enable debugging logs for the SDK. Once enabled, SDK will print debug Logs in your Android Studio's Logcat.
