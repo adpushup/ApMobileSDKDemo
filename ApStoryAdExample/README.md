@@ -1,34 +1,10 @@
 # ApStory Ads Demo
 
-This demo app shows how to integrate **ApStory** native ads into your Android application in a “stories” or “reels/shorts” format. It uses the [SHTS StoriesProgressView](https://github.com/shts/StoriesProgressView) library to drive a story-style UI and demonstrates how to insert ApStory ads every two users (or “stories”).
+Ap Story Ads are a visually immersive ad format designed for integration between story-style or reel-like content. Ideal for apps with swipeable, full-screen media experiences, Ap Story Ads appear seamlessly between user-generated content and support rich media creatives. These ads can be skipped or interacted with, ensuring a non-intrusive yet engaging monetization experience.
 
----
-
-## Demo App
+You can use our demo app as a reference project.
 
 📎 GitHub: [https://github.com/adpushup/ApMobileSDKDemo/tree/master/ApStoryAdExample](https://github.com/adpushup/ApMobileSDKDemo/tree/master/ApStoryAdExample)
-
----
-
-## Getting Started
-
-1. **Clone the repo**
-    
-    ```bash
-    git clone https://github.com/your-org/ApStoryAdsDemo.git
-    cd ApStoryAdsDemo
-    
-    ```
-    
-2. **Open in Android Studio**
-3. **Set your AD_PLACEMENT_ID** in `strings.xml`:
-    
-    ```xml
-    <string name="ad_placement_id">YOUR_AP_STORY_PLACEMENT_ID</string>
-    
-    ```
-    
-4. **Run on a device or emulator**.
 
 ---
 
@@ -99,6 +75,61 @@ apStory.destroy()
 
 ---
 
-## License
+## Extras
 
-This demo is provided as-is under the MIT license. See [LICENSE](https://chatgpt.com/c/LICENSE) for details.
+1. **Preloading Multiple Ads:**
+    
+    To improve ad availability and avoid placeholders, preload multiple ads in advance.
+    
+    ```kotlin
+    fun preloadAds(context: Context, adPlacementIds: List<String>, callback: (List<ApStory>) -> Unit) {
+        val adStories = mutableListOf<ApStory>()
+        var processedCount = 0
+    
+        for (placementId in adPlacementIds) {
+            val apStory = ApStory(placementId)
+            apStory.loadAd(context) { success ->
+                 processedCount++
+                 if (success) {
+                    adStories.add(apStory)
+                 }
+                 if (processedCount == adPlacementIds.size) {
+                    callback(adStories)
+                 }
+            })
+        }
+    }
+    ```
+    
+2. **Scale Type for Ad Media View:**
+    
+    You can define how the media content should scale within the ad’s media view.
+    
+    ```kotlin
+    apStory.setMediaScaleType(ImageView.ScaleType.CENTER_CROP)
+    ```
+    
+3. **Checking Ad Load Status:**
+    
+    To check if an ad has loaded, use the `isAdLoaded()` method.
+    
+    ```kotlin
+    val isLoaded: Boolean = apStory.isAdLoaded()
+    ```
+    
+4. **Checking Ad Shown Status:**
+    
+    Calling `getAd()` sets the Ad Shown status to **true**.
+    If an ad has already been shown, `getAd()` will return null.
+    
+    ```kotlin
+    val isUsed: Boolean = apStory.isAdShown()
+    ```
+    
+5. **Checking Ad Destroy Status:**
+    
+    When `destroy()` is called, ad resources are cleaned up, and `getAd()` will return `null`.
+    
+    ```kotlin
+    val isDestroyed: Boolean = apStory.isDestroyed()
+    ```
