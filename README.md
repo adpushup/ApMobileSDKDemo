@@ -2,7 +2,7 @@
 
 # **Get started**
 
-**Release version: 1.9.5 | Release date: 26.11.2024**
+**Release version: 2.0.2 | Release date: 20.05.2025**
 
 Follow this guide to get started with Ap Mobile SDK.
 
@@ -68,7 +68,7 @@ To prepare your app, complete the steps in the following sections.
     
     ```groovy
     dependencies {
-      implementation 'com.adpushup:apmobilesdk:1.9.5'
+      implementation 'com.adpushup:apmobilesdk:2.0.2'
       implementation 'com.google.android.gms:play-services-ads:23.2.0'
     }
     ```
@@ -166,27 +166,31 @@ public class MainActivity extends AppCompatActivity {
 
 ---
 
+
 # Implementing ads to your app
 
-[Banner Ads](BannerAdExample/README.md)
-
-[Adaptive Banner Ads](AdaptiveBannerAdExample/README.md)
-
-[Interstitial Ads](InterstitialAdExample/README.md)
-
-[Rewarded Ads](RewardedAdExample/README.md)
-
-[Rewarded Interstitial Ads](RewardedInterstitialAdExample/README.md)
-
-[Native Ads](NativeAdExample/README.md)
-
-[In-Stream Ads](InstreamAdExampleWithApExoPlayer/README.md)
-
-[ApVideo](ApVideoExample/README.md)
-
-[App Open Ads](AppOpenAdExample/Readme.md)
+| Ad Format                                           | Description                                                                  | Example Image                                     |
+|-----------------------------------------------------|------------------------------------------------------------------------------|---------------------------------------------------|
+| [Banner Ads](BannerAdExample/README.md)             | A standard rectangular ad displayed at the top or bottom of screen.          | ![Banner Ads](images/banner.png)         |
+| [Adaptive Banner Ads](AdaptiveBannerAdExample/README.md) | A banner that dynamically adjusts its size to fit different screens.         | ![Adaptive Banner](images/adaptive-banner.png) |
+| [Interstitial Ads](InterstitialAdExample/README.md) | Full-screen ads shown at natural transition points in your app.              | ![Interstitial](images/interstitial.png) |
+| [Rewarded Ads](RewardedAdExample/README.md)         | Full-screen Video ads that reward users with in-app items or currency for watching.      | ![Rewarded Ads](images/rewarded.png)     |
+| [Rewarded Interstitial Ads](RewardedInterstitialAdExample/README.md) | Rewarded Ad format that lets you offer rewards for ads that appear automatically during natural app transitions. | ![Rewarded Interstitial](images/rewarded-interstitial.png) |
+| [Native Ads](NativeAdExample/README.md)             | Ads that blend seamlessly with your app’s UI for a non-disruptive feel.      | ![Native Ads](images/native.png)         |
+| [In-Stream Ads](InstreamAdExampleWithApExoPlayer/README.md) | Video ads served within your app’s video content stream.                     | ![In-Stream Ads](images/ap-player.png) |
+| [ApVideo](ApVideoExample/README.md)                 | A flexible video ad unit that can be placed anywhere in your app, with built-in playlist and ad delivery for seamless in-stream monetization.             | ![ApVideo](images/ap-video.png)             |
+| [App Open Ads](AppOpenAdExample/README.md)          | Ads displayed when users return to your app.                       | ![App Open Ads](images/appopen.png)      |
+| [ApStory Ads](ApStoryAdExample/README.md)             | Story/Reels Format ads integrated into your app’s story/reels type UI flows.           | ![ApStory Ads](images/story.png)         |
 
 ---
+
+# Extras
+## Looking for a Plug-and-Play Solution?
+
+Try our [Ap Mediation SDK](mediation/README.md) — a seamless mediation adapter for AdMob. It integrates effortlessly with your existing AdMob ad stack, requiring minimal setup while maximizing monetization potential.
+
+---
+
 # Debugging Tools
 
 Ap SDK provides ```ApMobileSdk.enableDebugging()``` function to enable debugging logs for the SDK. Once enabled, SDK will print debug Logs in your Android Studio's Logcat.

@@ -40,7 +40,7 @@ dependencies {
     implementation 'com.adpushup.apmobilesdk:video:1.9.3'
 
     // Ap Mobile SDK + Google Ads SDK - Include if other ad formats are being used.
-//    implementation 'com.adpushup:apmobilesdk:1.9.5'
+//    implementation 'com.adpushup:apmobilesdk:2.0.2'
 //    implementation 'com.google.android.gms:play-services-ads:23.2.0'
 
     // Media3 ExoPlayer

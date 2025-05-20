@@ -1,0 +1,28 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/txtMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/text_main"
+        android:padding="12dp"/>
+    <Button
+        android:id="@+id/btnStory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Load Story Ad"/>
+
+    <Button
+        android:id="@+id/btnReel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Load Reel Ad"
+        android:layout_marginTop="8dp"/>
+
+</LinearLayout>
