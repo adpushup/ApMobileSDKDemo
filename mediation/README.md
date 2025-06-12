@@ -4,7 +4,6 @@
 
 Here is a quick implementation guide that covers waterfall integration and shows you how to use Ap Mediation SDK based on if you are using [GAM Mediation](https://developers.google.com/ad-manager/mobile-ads-sdk/android/mediation) or [AdMob Mediation](https://developers.google.com/admob/android/mediation).
 
-# Table of Contents
 
 # AdMob Mediation
 
